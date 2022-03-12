@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>GEORDLE</title>
+  <link href="geordle.css" rel="stylesheet">
+  <link rel="icon" href="favicon.ico">
+  <script defer src="geordle.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+</head>
+<body>
+ <img class="headerimage" src="maporig.jpg"><br><div id="title">GEORDLE</div><br>
+	<br> 
+  <button data-modal-target="#modal">Game Rules</button>
+      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; MODE :-     <input type="button" id="mode" value="EASY" onclick="toggle(this);"></center>
+  <div class="modal" id="modal">
+    <div class="modal-header">
+      <div class="title">How To Play</div>
+	  
+      <button data-close-button class="close-button">&times;</button>
+    </div>
+			<div class ="modal-body">
+			  GEORDLE is a spin-off on the popular <a href="https://www.nytimes.com/games/wordle/index.html"><b>WORDLE</b></a> game for Geography Lovers. The rules remain mostly the same. 
+			  <br><br>
+			  Try names of COUNTRIES or CAPITALS depending on the game type. This is a random selection as it is important to know CAPITALS too :).
+			  <br><br>
+			  Guess the COUNTRY/CAPITAL within the allowed number of tries. Hit the enter button to submit.
+              <br><br>
+			  In the Easy Mode, the length of the guess NEED NOT match the lenth of the answer. To challenge yourself, try the Hard Mode.
+              <br><br>
+			  In the Hard Mode, the lengths of the guesses and the answer MUST match. This mode is designed for Experts.
+              <br><br>
+		      After each guess, the colour of the tiles will change to show how close your guess was to the word.
+			  <br><br>
+			  <img class="colorimage" src="color.PNG"><br>
+			  <h3><center>Play multiple times a day!<br><br><br></h3>
+			  <!-- MODE :- <input type="button" id="mode" value="EASY" onclick="toggle(this);"></center> -->
+			  <br><br>
+			</div>		
+  </div>
+  <div id="overlay"></div>
+		<hr>
+        <br>
+        <div id="board"></div>
+        <br>
+        <h1 id="answer"></h1>
+	   <br><br>
+    </body>
+    </body>
+</html>
+
+
