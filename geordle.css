@@ -193,3 +193,8 @@ hr {
 	opacity: 1;
 	pointer-events: all;
 }
+
+#footer{
+	text-align: center;
+	font-size: 0.75rem;
+}
