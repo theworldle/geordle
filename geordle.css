@@ -199,3 +199,26 @@ hr {
 	font-size: 0.75rem;
 }
 
+@media screen and (min-width: 400px) {
+  .keyboard-row {
+    width: 400px;
+  }
+  .key-tile {
+    width: 36px;
+  } 
+  .enter-key-tile {
+    width: 76px;
+  }    
+}
+
+@media screen and (max-width: 399px) and (min-width: 350px) {
+  .keyboard-row {
+    width: 350px;
+  }
+  .key-tile {
+    width: 30px;
+  } 
+  .enter-key-tile {
+    width: 65px;
+  }   
+}
