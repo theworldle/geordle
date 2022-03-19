@@ -37,7 +37,7 @@ if (gameType == 1) {
 	var guessList = ["liechtenstein","guineabissau","turkmenistan","burkinafaso","saudiarabia","sierraleone","southafrica","vaticancity","afghanistan","netherlands","philippines","switzerland","elsalvador","newzealand","northkorea","saintlucia","southkorea","southsudan","azerbaijan","bangladesh","ivorycoast","kazakhstan","kyrgyzstan","luxembourg","madagascar","mauritania","micronesia","montenegro","mozambique","seychelles","tajikistan","timorleste","uzbekistan","caboverde","costarica","sanmarino","argentina","australia","guatemala","indonesia","lithuania","mauritius","nicaragua","palestine","singapore","venezuela","scotland","srilanka","barbados","botswana","bulgaria","cambodia","cameroon","colombia","djibouti","dominica","eswatini","ethiopia","honduras","kiribati","malaysia","maldives","mongolia","pakistan","paraguay","portugal","slovakia","slovenia","suriname","tanzania","thailand","zimbabwe","england","barbuda","antigua","albania","algeria","andorra","armenia","austria","bahamas","bahrain","belarus","belgium","bolivia","burundi","comoros","croatia","denmark","ecuador","eritrea","estonia","finland","georgia","germany","grenada","hungary","iceland","ireland","jamaica","lebanon","lesotho","liberia","moldova","morocco","myanmar","namibia","nigeria","romania","senegal","somalia","tunisia","ukraine","uruguay","vanuatu","vietnam","angola","belize","bhutan","bosnia","brazil","brunei","canada","cyprus","france","gambia","greece","guinea","guyana","israel","jordan","kosovo","kuwait","latvia","malawi","mexico","monaco","norway","panama","poland","russia","rwanda","serbia","sweden","taiwan","turkey","tuvalu","uganda","zambia","wales","czech","benin","chile","china","congo","egypt","gabon","ghana","haiti","india","italy","japan","kenya","libya","malta","nauru","nepal","niger","palau","qatar","samoa","spain","sudan","syria","tonga","yemen","chad","cuba","fiji","iran","iraq","laos","mali","oman","peru","togo","usa","uae","png"]
 } 
 var word = wordList[Math.floor(Math.random()*wordList.length)].toUpperCase();
-console.log(word);
+//console.log(word);
 var height = 8; //number of guesses
 var width = word.length; //length of the word
 if (width > 5){
@@ -183,6 +183,26 @@ function hint() {
 	}		
 }
 
+function giveUp() {
+	if (gameOver != true){
+		if (col != 0){
+			for (let c = col-1; c >=0; c--) {
+				let currTile = document.getElementById(row.toString() + '-' + c.toString());
+				currTile.innerText = " ";
+				col -= 1;
+			}	
+		}	
+		for (let c = 0; c < width; c++) {
+			currTile = document.getElementById(row.toString() + '-' + c.toString());
+			currTile.innerText = word[c];
+			currTile.classList.add("correct");
+		}	
+			gameOver = true;
+			document.getElementById("answer").style.color = "red";
+			document.getElementById("answer").innerText = "You gave up too easily.\nTry harder next time!";
+	}
+}
+
 function processKey() {
     e = { "code" : this.id };
     processInput(e);
@@ -284,6 +304,7 @@ function update() {
 		//Is it in the correct position?
 		if (word[c] == letter) {
 			currTile.classList.add("correct");
+		//disable hint button if first letter is correct 			
 			if (c == 0) {
 				document.getElementById("hint").disabled = true;
 				if (hintSwitch == 0){
@@ -298,7 +319,7 @@ function update() {
 			correct += 1;
 			letterCount[letter] -= 1; //deduct the letter count
 		}
-		//disable hint button if first letter is correct 
+
 	
 		if (correct == width) {
 			document.getElementById("answer").style.color = "green";
