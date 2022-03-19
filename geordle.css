@@ -201,24 +201,17 @@ hr {
 
 @media screen and (min-width: 400px) {
   .keyboard-row {
-    width: 400px;
-  }
-  .key-tile {
-    width: 36px;
-  } 
-  .enter-key-tile {
-    width: 76px;
-  }    
+    width: 100%;
 }
 
-@media screen and (max-width: 399px) and (min-width: 350px) {
+@media screen and (min-width: 400px) {
   .keyboard-row {
-    width: 365px;
+    width: 90%;
   }
   .key-tile {
-    width: 30px;
+    width: 90%;
   } 
   .enter-key-tile {
-    width: 64px;
-  }   
+    width: 90%;
+  }    
 }
