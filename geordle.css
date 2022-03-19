@@ -213,7 +213,7 @@ hr {
 
 @media screen and (max-width: 399px) and (min-width: 350px) {
   .keyboard-row {
-    width: 350px;
+    width: 345px;
   }
   .key-tile {
     width: 30px;
