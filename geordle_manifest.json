@@ -1,0 +1,16 @@
+{
+  "short_name": "Geordle",
+  "name": "Geordle",
+  "icons": [
+    {
+      "src": "https://sank0403.github.io/geordle/mapicon.jpg",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "https://sank0403.github.io/geordle/",
+  "background_color": "#000000",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "description": "Wordle for Countries and Capitals"
+}
