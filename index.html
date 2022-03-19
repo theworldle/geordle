@@ -11,7 +11,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>GEORDLE!</title>
+  <title>GEORDLE</title>
   <link href="geordle.css" rel="stylesheet">
   <link rel="icon" href="favicon.ico">
   <script defer src="geordle.js"></script>
@@ -20,10 +20,8 @@
 <body>
  <img class="headerimage" src="maporig.jpg"><br><div id="title">GEORDLE</div><br>
 	<br> 
-  <button data-modal-target="#modal">Game Rules</button> 
-      <!--&nbsp; &nbsp;  MODE :-     <input type="button" id="mode" value="EASY" onclick="toggle(this); "></center>-->
-	  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; 
-  <input type="button" id="hint" value="Show 1st Letter" onclick="this.disabled=true; hint();">	  	
+  <button data-modal-target="#modal">Game Rules</button>
+      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; MODE :-     <input type="button" id="mode" value="EASY" onclick="toggle(this);"></center>
   <div class="modal" id="modal">
     <div class="modal-header">
       <div class="title">How To Play</div>
@@ -36,12 +34,10 @@
 			  Try names of COUNTRIES or CAPITALS depending on the game type. This is a random selection as it is important to know CAPITALS too :).
 			  <br><br>
 			  Guess the COUNTRY/CAPITAL within the allowed number of tries. Hit the enter button to submit.
-<!--               <br><br>
+              <br><br>
 			  In the Easy Mode, the length of the guess NEED NOT match the lenth of the answer. To challenge yourself, try the Hard Mode.
               <br><br>
-			  In the Hard Mode, the lengths of the guesses and the answer MUST match. This mode is designed for Experts. -->
-              <br><br>
-		      Use the Hint button, to reveal the first letter. This can be used only once per game. 	  
+			  In the Hard Mode, the lengths of the guesses and the answer MUST match. This mode is designed for Experts.
               <br><br>
 		      After each guess, the colour of the tiles will change to show how close your guess was to the word.
 			  <br><br>
@@ -63,5 +59,3 @@
     </body>
     </body>
 </html>
-
-
