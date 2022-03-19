@@ -6,12 +6,7 @@
       "src": "https://sank0403.github.io/geordle/mapicon.jpg",
       "type": "image/png",
       "sizes": "192x192"
-    },
-    {
-      "src": "https://sank0403.github.io/geordle/mapicon48x48.png",
-      "type": "image/png",
-      "sizes": "48x48"
-    }	
+    }
   ],
   "start_url": "https://sank0403.github.io/geordle/",
   "background_color": "#000000",
