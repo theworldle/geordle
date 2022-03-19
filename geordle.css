@@ -216,9 +216,9 @@ hr {
     width: 360px;
   }
   .key-tile {
-    width: 32px;
+    width: 36px;
   } 
   .enter-key-tile {
-    width: 64px;
-  }    
+    width: 76px;
+  }   
 }
