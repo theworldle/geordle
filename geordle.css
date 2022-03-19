@@ -213,12 +213,12 @@ hr {
 
 @media screen and (max-width: 399px) and (min-width: 350px) {
   .keyboard-row {
-    width: 345px;
+    width: 375px;
   }
   .key-tile {
-    width: 30px;
+    width: 32px;
   } 
   .enter-key-tile {
-    width: 65px;
+    width: 68px;
   }    
 }
