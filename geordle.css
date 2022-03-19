@@ -222,3 +222,15 @@ hr {
     width: 65px;
   }   
 }
+
+@media screen and (max-width: 399px) and (min-width: 310px) {
+  .keyboard-row {
+    width: 310px;
+  }
+  .key-tile {
+    width: 26px;
+  } 
+  .enter-key-tile {
+    width: 60px;
+  }   
+}

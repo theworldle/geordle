@@ -6,10 +6,10 @@ var hintType = 0;
 var hintSwitch = 0;
 
 if (gameType==1){
-	alert("The Mystery Word is a CAPITAL");
+	//alert("The Mystery Word is a CAPITAL");
 	gameName = "CAPITAL";
   } else {
-	alert("The Mystery Word is a COUNTRY");
+	//alert("The Mystery Word is a COUNTRY");
 	gameName = "COUNTRY";
 }
 function toggle(button) {
@@ -302,7 +302,7 @@ function update() {
 	
 		if (correct == width) {
 			document.getElementById("answer").style.color = "green";
-			document.getElementById("answer").innerText = "Congrats! You have identified the " +gameName +" successfully.";
+			document.getElementById("answer").innerText = "Congratulations! \n You have identified the " +gameName +" successfully.";
 			gameOver = true;
 		}
     }
