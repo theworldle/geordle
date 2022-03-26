@@ -26,7 +26,7 @@ hr {
     margin: 0 auto;
     margin-top: 3px;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap;	
 }
 
 #answer {
@@ -223,14 +223,14 @@ hr {
   }   
 }
 
-@media screen and (max-width: 399px) and (min-width: 310px) {
+@media screen and (max-width: 349px) and (min-width: 310px) {
   .keyboard-row {
-    width: 310px;
+    width: 340px;
   }
   .key-tile {
-    width: 26px;
+    width: 30px;
   } 
   .enter-key-tile {
-    width: 60px;
+    width: 62px;
   }   
 }
