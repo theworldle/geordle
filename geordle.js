@@ -39,8 +39,6 @@ function toggle(button) {
 }
 
 var gameOver = false;
-//console.log(gameType);
-//var word = "DUBLIN";
 if (gameType == 1) {
 	var wordList = ["abudhabi","abuja","accra","addisababa","algiers","amman","amsterdam","andorralavella","ankara","antananarivo","apia","ashgabat","asmara","asuncion","athens","baghdad","baku","bamako","bandarseribegawan","bangkok","bangui","banjul","basseterre","beijing","beirut","belgrade","belmopan","berlin","bern","bishkek","bissau","bloemfontein","bogota","brasilia","bratislava","brazzaville","bridgetown","brussels","bucharest","budapest","buenosaires","cairo","canberra","capetown","caracas","castries","chisinau","conakry","copenhagen","dakar","damascus","dhaka","dili","djibouti","dodoma","doha","dublin","dushanbe","freetown","funafuti","gaborone","georgetown","gitega","guatemalacity","hanoi","harare","havana","helsinki","honiara","islamabad","jakarta","jerusalem","juba","kabul","kampala","kathmandu","khartoum","kigali","kingston","kingstown","kinshasa","kualalumpur","kuwaitcity","kyiv","lapaz","libreville","lilongwe","lima","lisbon","ljubljana","lobamba","lome","london","luanda","lusaka","luxembourg","madrid","majuro","malabo","male","managua","manama","manila","maputo","maseru","mbabane","mexicocity","minsk","mogadishu","monaco","monrovia","montevideo","moroni","moscow","muscat","nairobi","nassau","naypyidaw","ndjamena","newdelhi","ngerulmud","niamey","nicosia","nouakchott","nukualofa","nursultan","oslo","ottawa","ouagadougou","oyala","palikir","panamacity","paramaribo","paris","phnompenh","podgorica","portauprince","portlouis","portmoresby","portofspain","portonovo","portvila","prague","praia","pretoria","pristina","pyongyang","quito","rabat","reykjavik","riga","riyadh","rome","roseau","saintgeorges","saintjohns","sanaa","sanjose","sanmarino","sansalvador","santiago","santodomingo","satome","sarajevo","seoul","singapore","skopje","sofia","srijayawardenepurakotte","stockholm","sucre","suva","taipei","tallinn","tarawa","tashkent","tbilisi","tegucigalpa","tehran","thimphu","tirana","tokyo","tripoli","tunis","ulaanbaatar","vaduz","valletta","vaticancity","victoria","vienna","vientiane","vilnius","warsaw","washingtondc","wellington","windhoek","yamoussoukro","yaounde","yarendistrict","yerevan","zagreb"]
 	var guessList = ["abudhabi","abuja","accra","addisababa","algiers","amman","amsterdam","andorralavella","ankara","antananarivo","apia","ashgabat","asmara","asuncion","athens","baghdad","baku","bamako","bandarseribegawan","bangkok","bangui","banjul","basseterre","beijing","beirut","belgrade","belmopan","berlin","bern","bishkek","bissau","bloemfontein","bogota","brasilia","bratislava","brazzaville","bridgetown","brussels","bucharest","budapest","buenosaires","cairo","canberra","capetown","caracas","castries","chisinau","conakry","copenhagen","dakar","damascus","dhaka","dili","djibouti","dodoma","doha","dublin","dushanbe","freetown","funafuti","gaborone","georgetown","gitega","guatemalacity","hanoi","harare","havana","helsinki","honiara","islamabad","jakarta","jerusalem","juba","kabul","kampala","kathmandu","khartoum","kigali","kingston","kingstown","kinshasa","kualalumpur","kuwaitcity","kyiv","lapaz","libreville","lilongwe","lima","lisbon","ljubljana","lobamba","lome","london","luanda","lusaka","luxembourg","madrid","majuro","malabo","male","managua","manama","manila","maputo","maseru","mbabane","mexicocity","minsk","mogadishu","monaco","monrovia","montevideo","moroni","moscow","muscat","nairobi","nassau","naypyidaw","ndjamena","newdelhi","ngerulmud","niamey","nicosia","nouakchott","nukualofa","nursultan","oslo","ottawa","ouagadougou","oyala","palikir","panamacity","paramaribo","paris","phnompenh","podgorica","portauprince","portlouis","portmoresby","portofspain","portonovo","portvila","prague","praia","pretoria","pristina","pyongyang","quito","rabat","reykjavik","riga","riyadh","rome","roseau","saintgeorges","saintjohns","sanaa","sanjose","sanmarino","sansalvador","santiago","santodomingo","satome","sarajevo","seoul","singapore","skopje","sofia","srijayawardenepurakotte","stockholm","sucre","suva","taipei","tallinn","tarawa","tashkent","tbilisi","tegucigalpa","tehran","thimphu","tirana","tokyo","tripoli","tunis","ulaanbaatar","vaduz","valletta","vaticancity","victoria","vienna","vientiane","vilnius","warsaw","washingtondc","wellington","windhoek","yamoussoukro","yaounde","yarendistrict","yerevan","zagreb"]
@@ -50,7 +48,7 @@ if (gameType == 1) {
 	var guessList = ["liechtenstein","guineabissau","turkmenistan","burkinafaso","saudiarabia","sierraleone","southafrica","vaticancity","afghanistan","netherlands","philippines","switzerland","elsalvador","newzealand","northkorea","saintlucia","southkorea","southsudan","azerbaijan","bangladesh","ivorycoast","kazakhstan","kyrgyzstan","luxembourg","madagascar","mauritania","micronesia","montenegro","mozambique","seychelles","tajikistan","timorleste","uzbekistan","caboverde","costarica","sanmarino","argentina","australia","guatemala","indonesia","lithuania","mauritius","nicaragua","palestine","singapore","venezuela","scotland","srilanka","barbados","botswana","bulgaria","cambodia","cameroon","colombia","djibouti","dominica","eswatini","ethiopia","honduras","kiribati","malaysia","maldives","mongolia","pakistan","paraguay","portugal","slovakia","slovenia","suriname","tanzania","thailand","zimbabwe","england","barbuda","antigua","albania","algeria","andorra","armenia","austria","bahamas","bahrain","belarus","belgium","bolivia","burundi","comoros","croatia","denmark","ecuador","eritrea","estonia","finland","georgia","germany","grenada","hungary","iceland","ireland","jamaica","lebanon","lesotho","liberia","moldova","morocco","myanmar","namibia","nigeria","romania","senegal","somalia","tunisia","ukraine","uruguay","vanuatu","vietnam","angola","belize","bhutan","bosnia","brazil","brunei","canada","cyprus","france","gambia","greece","guinea","guyana","israel","jordan","kosovo","kuwait","latvia","malawi","mexico","monaco","norway","panama","poland","russia","rwanda","serbia","sweden","taiwan","turkey","tuvalu","uganda","zambia","wales","czech","benin","chile","china","congo","egypt","gabon","ghana","haiti","india","italy","japan","kenya","libya","malta","nauru","nepal","niger","palau","qatar","samoa","spain","sudan","syria","tonga","yemen","chad","cuba","fiji","iran","iraq","laos","mali","oman","peru","togo","usa","uae","png"]
 } 
 var word = wordList[Math.floor(Math.random()*wordList.length)].toUpperCase();
-console.log(word);
+//console.log(word);
 var height = 8; //number of guesses
 var width = word.length; //length of the word
 if (width > 5){
@@ -185,25 +183,33 @@ function hint() {
 	if (!gameOver) {
 		//alert("Hint is now pressed");
 		hintSwitch = 1;
-		if (col != 0){
-			for (let c = col-1; c >=0; c--) {
+		if (col != hintType){
+			for (let c = col-1; c >=hintType; c--) {
 				let currTile = document.getElementById(row.toString() + '-' + c.toString());
 				currTile.innerText = " ";
+				currTile.classList.remove("poptile");
 				col -= 1;
 			}	
 		}	
-		let currTile = document.getElementById(row.toString() + '-' + 0);
-		if (currTile.innerText == ""){
-			hintType = 1;
+		for (let c = 0; c <= hintType; c++) {
+			let currTile = document.getElementById(row.toString() + '-' + c);
+			currTile.innerText = word[c];
+			currTile.classList.add("correct");		
+			col =  c + 1;			
 		}	
-		currTile.innerText = word[0];
-		currTile.classList.add("correct");
-		if (hintType == 1){
+		//let currTile = document.getElementById(row.toString() + '-' + hintType);
+/* 		if (currTile.innerText == ""){
+			hintType = 1;
+		} */	
+		//currTile.innerText = word[hintType];
+		//currTile.classList.add("correct");
+/* 		if (hintType == 1){
 				col += 1;
-		}		
+		} */
+		hintType += 1;	
+		timer += 5;			
 		document.getElementById("answer").style.color = "#6AAA64";
-		document.getElementById("answer").innerText = "STARTING LETTER REVEALED!";
-		document.getElementById("hint").style.visibility = 'hidden';
+		document.getElementById("answer").innerText = "ONE LETTER REVEALED!\n FIVE SECONDS PENALTY.";
 	}
 }
 
@@ -223,9 +229,12 @@ function giveUp() {
 			currTile.classList.add("failed", "animated");
 		}	
 			gameOver = true;
-			document.getElementById("hint").style.visibility = 'initial';
 			document.getElementById("answer").style.color = "red";
 			document.getElementById("answer").innerText = "YOU GAVE UP TOO EASILY.\nTRY HARDER NEXT TIME!";
+			localStorage.totalgtime = Number(localStorage.totalgtime)+ timer;		
+			localStorage.averagegtime = Math.round(localStorage.totalgtime/localStorage.totalgwins);
+			document.getElementById("wins").innerHTML = "Total Wins: " + localStorage.totalgwins;
+			document.getElementById("time").innerHTML = "Avg. Time: " + localStorage.averagegtime + "s";			
 	}
 }
 
@@ -269,7 +278,6 @@ function processInput(e) {
 
     if (!gameOver && row == height) {
         gameOver = true;
-		document.getElementById("hint").style.visibility = 'initial';
 		document.getElementById("answer").style.color = "red";
         document.getElementById("answer").innerText = "THE  " +gameName +"  WAS " + word + "! HARD LUCK.\n REFRESH TO TRY AGAIN.";
     }
@@ -320,7 +328,7 @@ function update() {
 		currTile.innerText = "";
 		letter ="";
 		}
-        guess += letter;
+        //guess += letter;
     }
 
     //start processing guess
@@ -346,13 +354,12 @@ function update() {
 		//Is it in the correct position?
 		if (word[c] == letter) {
 			//disable hint button if first letter is correct 			
-			if (c == 0) {
+/* 			if (c == 0) {
 				if (hintSwitch == 0){
-				document.getElementById("hint").style.visibility = 'hidden';	
 				document.getElementById("answer").style.color = "#6AAA64";
 				document.getElementById("answer").innerText = "YOU HAVE IDENTIFIED THE FIRST LETTER.\nHINT IS NOW DISABLED.";	
 				}	
-			}				
+			} */				
 			currTile.classList.add("correct");
 			let keyTile = document.getElementById("Key" + letter);
 			keyTile.classList.remove("present");
@@ -362,9 +369,9 @@ function update() {
 			letterCount[letter] -= 1; //deduct the letter count
 		}
 		if (correct == width) {
-			document.getElementById("hint").style.visibility = 'initial';
 			document.getElementById("answer").style.color = "#6AAA64";
-			document.getElementById("answer").innerText = "CONGRATULATIONS! \n YOU HAVE IDENTIFIED THE " +gameName +" SUCCESSFULLY.";
+			document.getElementById("answer").innerText = "YOU HAVE IDENTIFIED THE " +gameName +" SUCCESSFULLY.\n CONGRATULATIONS! REFRESH TO TRY AGAIN.";
+			//console.log(timer);
 			for (let c = 0; c < width; c++) {
 				let winTile = document.getElementById(row.toString() + '-' + c.toString());
 				winTile.classList.remove("poptile");

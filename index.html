@@ -39,8 +39,9 @@
 	<button data-modal-target="#modal" class="buttonrad">Rules❓</button> 
     <!--&nbsp; &nbsp;  MODE :-     <input type="button" id="mode" value="EASY" onclick="toggle(this); "></center>-->
 	<!-- &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;  -->
-	<input type="button" id="hint" value="Hint💡" onclick="this.disabled=true; hint();" class="buttonrad">	 
-	<input type="button" id="giveup" value="Give Up👎" onclick="giveUp();" class="buttonrad">  </center>	
+	<!-- <input type="button" id="hint" value="Hint💡" onclick="this.disabled=true; hint();" class="buttonrad">	  -->
+	<input type="button" id="hint" value="Hint💡" onclick="hint(); this.blur();" class="buttonrad">
+	<input type="button" id="giveup" value="Give Up👎" onclick="giveUp(); this.blur();" class="buttonrad">  </center>	
 	<div class="modal" id="modal">
 		<div class="modal-header">
 			<div class="title"><strong>
@@ -68,7 +69,7 @@
 		  <br><br>
 		  Lengths of your guesses does not matter, as long as it is a valid COUNTRY/CAPITAL (depending on the Game Mode). 		  
 		  <br><br>
-		  Use the Hint button, to reveal the first letter. This can be used only once per game. 	  
+		  Use the Hint button, to reveal ONE letter. There is a 5 sec time penalty for each use.  
 		  <br><br>
 		  After each guess, the colour of the tiles will change to show how close your guess was to the answer.
 		  <br><br>
