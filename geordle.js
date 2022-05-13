@@ -1,3 +1,19 @@
+window.localStorage;
+if (!localStorage.totalgwins){
+localStorage.setItem("totalgwins",0);
+localStorage.setItem("totalgtime",0);
+localStorage.setItem("averagegtime",0);
+}
+
+let timer = 0;
+window.onload = onTimer();
+function onTimer() {
+  timer++;
+	if (!gameOver){  
+		setTimeout(onTimer, 1000);
+	}
+}
+
 // Toggles the passed button from OFF to ON and vice-versa.
 var gameMode = 0;
 var gameType = Math.round(Math.random()*1);
@@ -22,9 +38,6 @@ function toggle(button) {
   }
 }
 
-function disable() {
-	document.getElementById("hint").disabled = true;
-}
 var gameOver = false;
 //console.log(gameType);
 //var word = "DUBLIN";
@@ -37,15 +50,15 @@ if (gameType == 1) {
 	var guessList = ["liechtenstein","guineabissau","turkmenistan","burkinafaso","saudiarabia","sierraleone","southafrica","vaticancity","afghanistan","netherlands","philippines","switzerland","elsalvador","newzealand","northkorea","saintlucia","southkorea","southsudan","azerbaijan","bangladesh","ivorycoast","kazakhstan","kyrgyzstan","luxembourg","madagascar","mauritania","micronesia","montenegro","mozambique","seychelles","tajikistan","timorleste","uzbekistan","caboverde","costarica","sanmarino","argentina","australia","guatemala","indonesia","lithuania","mauritius","nicaragua","palestine","singapore","venezuela","scotland","srilanka","barbados","botswana","bulgaria","cambodia","cameroon","colombia","djibouti","dominica","eswatini","ethiopia","honduras","kiribati","malaysia","maldives","mongolia","pakistan","paraguay","portugal","slovakia","slovenia","suriname","tanzania","thailand","zimbabwe","england","barbuda","antigua","albania","algeria","andorra","armenia","austria","bahamas","bahrain","belarus","belgium","bolivia","burundi","comoros","croatia","denmark","ecuador","eritrea","estonia","finland","georgia","germany","grenada","hungary","iceland","ireland","jamaica","lebanon","lesotho","liberia","moldova","morocco","myanmar","namibia","nigeria","romania","senegal","somalia","tunisia","ukraine","uruguay","vanuatu","vietnam","angola","belize","bhutan","bosnia","brazil","brunei","canada","cyprus","france","gambia","greece","guinea","guyana","israel","jordan","kosovo","kuwait","latvia","malawi","mexico","monaco","norway","panama","poland","russia","rwanda","serbia","sweden","taiwan","turkey","tuvalu","uganda","zambia","wales","czech","benin","chile","china","congo","egypt","gabon","ghana","haiti","india","italy","japan","kenya","libya","malta","nauru","nepal","niger","palau","qatar","samoa","spain","sudan","syria","tonga","yemen","chad","cuba","fiji","iran","iraq","laos","mali","oman","peru","togo","usa","uae","png"]
 } 
 var word = wordList[Math.floor(Math.random()*wordList.length)].toUpperCase();
-//console.log(word);
+console.log(word);
 var height = 8; //number of guesses
 var width = word.length; //length of the word
 if (width > 5){
 	height = 10
 }
-document.getElementById("answer").style.color = "cyan";
-document.getElementById("answer").innerText = "The " +gameName +" has " + width + " letters. You have " + height + " tries!\n Read the Game Rules for more instructions.";
-var row = 0; //current guess (attempt #)
+document.getElementById("answer").style.color = "#6AAA64";
+document.getElementById("answer").innerText = "THE " +gameName +" HAS " + width + " LETTERS. YOU HAVE " + height + " TRIES!\n READ THE GAME RULES FOR MORE INSTRUCTIONS.";
+var row = 0; //CURRENT GUESS (ATTEMPT #)
 var col = 0; //current letter for that attempt
 
 var boardWidth = (width*30); 
@@ -108,6 +121,14 @@ function intialize() {
             document.getElementById("board").appendChild(tile);
         }
     }
+	
+	document.getElementById("wins").innerHTML = "Total Wins: " + localStorage.totalgwins;
+	if (localStorage.totalgwins == 0){
+		document.getElementById("time").innerHTML = "Avg. Time: 0s";
+	}
+	else{
+		document.getElementById("time").innerHTML = "Avg. Time: " + localStorage.averagegtime + "s";
+	}
 
     // Create the key board
     let keyboard = [
@@ -153,7 +174,18 @@ function intialize() {
         }
         document.body.appendChild(keyboardRow);
     }
-    
+   		var mybr = document.createElement('br');
+		document.body.appendChild(mybr);
+		var mybr = document.createElement('br');
+		document.body.appendChild(mybr);
+		var button = document.createElement("button");
+		button.innerText = "Buy Me a Coffee❤️";
+		// attach the event
+		button.addEventListener('click', function(){
+		  window.open('https://www.buymeacoffee.com/sank0403/', '_blank'); // _blank will open the site in a new tab
+		});
+		document.body.appendChild(button);
+		button.classList.add("buttoncoffee");
 
     // Listen for Key Press
     document.addEventListener("keyup", (e) => {
@@ -163,24 +195,29 @@ function intialize() {
 
 
 function hint() {
-	//alert("Hint is now pressed");
-	hintSwitch = 1;
-	if (col != 0){
-		for (let c = col-1; c >=0; c--) {
-			let currTile = document.getElementById(row.toString() + '-' + c.toString());
-			currTile.innerText = " ";
-			col -= 1;
+	if (!gameOver) {
+		//alert("Hint is now pressed");
+		hintSwitch = 1;
+		if (col != 0){
+			for (let c = col-1; c >=0; c--) {
+				let currTile = document.getElementById(row.toString() + '-' + c.toString());
+				currTile.innerText = " ";
+				col -= 1;
+			}	
 		}	
-	}	
-    let currTile = document.getElementById(row.toString() + '-' + 0);
-	if (currTile.innerText == ""){
-		hintType = 1;
-	}	
-    currTile.innerText = word[0];
-	currTile.classList.add("correct");
-	if (hintType == 1){
-			col += 1;
-	}		
+		let currTile = document.getElementById(row.toString() + '-' + 0);
+		if (currTile.innerText == ""){
+			hintType = 1;
+		}	
+		currTile.innerText = word[0];
+		currTile.classList.add("correct");
+		if (hintType == 1){
+				col += 1;
+		}		
+		document.getElementById("answer").style.color = "#6AAA64";
+		document.getElementById("answer").innerText = "STARTING LETTER REVEALED!";
+		document.getElementById("hint").style.visibility = 'hidden';
+	}
 }
 
 function giveUp() {
@@ -195,11 +232,13 @@ function giveUp() {
 		for (let c = 0; c < width; c++) {
 			currTile = document.getElementById(row.toString() + '-' + c.toString());
 			currTile.innerText = word[c];
-			currTile.classList.add("correct");
+			currTile.classList.remove("poptile","shaketile");
+			currTile.classList.add("failed", "animated");
 		}	
 			gameOver = true;
+			document.getElementById("hint").style.visibility = 'initial';
 			document.getElementById("answer").style.color = "red";
-			document.getElementById("answer").innerText = "You gave up too easily.\nTry harder next time!";
+			document.getElementById("answer").innerText = "YOU GAVE UP TOO EASILY.\nTRY HARDER NEXT TIME!";
 	}
 }
 
@@ -217,6 +256,7 @@ function processInput(e) {
             let currTile = document.getElementById(row.toString() + '-' + col.toString());
             if (currTile.innerText == "") {
                 currTile.innerText = e.code[3];
+				currTile.classList.add("poptile");
                 col += 1;
             }
         }
@@ -228,8 +268,12 @@ function processInput(e) {
         }
         let currTile = document.getElementById(row.toString() + '-' + col.toString());
         currTile.innerText = "";
-		currTile.classList.remove("correct");
 		document.getElementById("answer").innerText = "";
+		for (let c = width-1; c = 0; c--) {
+			let delTile = document.getElementById(row.toString() + '-' + c);
+			delTile.classList.remove("shaketile");
+		}		
+		currTile.classList.remove("correct", "poptile");
     }
 
     else if (e.code == "Enter") {
@@ -238,12 +282,17 @@ function processInput(e) {
 
     if (!gameOver && row == height) {
         gameOver = true;
+		document.getElementById("hint").style.visibility = 'initial';
 		document.getElementById("answer").style.color = "red";
-        document.getElementById("answer").innerText = "The  " +gameName +"  was " + word + "! Try Again.";
+        document.getElementById("answer").innerText = "THE  " +gameName +"  WAS " + word + "! HARD LUCK.\n REFRESH TO TRY AGAIN.";
     }
 }
 
 function update() {
+	for (let c = 0; c < width; c++) {
+		let currTile = document.getElementById(row.toString() + '-' + c);
+		currTile.classList.remove("shaketile");
+	}	
     let guess = "";
     document.getElementById("answer").innerText = "";
 
@@ -259,14 +308,18 @@ function update() {
     if (gameMode == 1){
 		if (!gameOver && col < width) {
 			document.getElementById("answer").style.color = "red";
-			document.getElementById("answer").innerText = "Not enough letters!";
+			document.getElementById("answer").innerText = "NOT ENOUGH LETTERS!";
 			return;
 		}   
 	}		
 
 	if (!guessList.includes(guess)) {
 		document.getElementById("answer").style.color = "red";
-		document.getElementById("answer").innerText = "Not a valid  " +gameName +"  name!";
+		document.getElementById("answer").innerText = "NOT A VALID  " +gameName +"  NAME!";
+		for (let c = 0; c < width; c++) {
+			let currTile = document.getElementById(row.toString() + '-' + c);
+			currTile.classList.add("shaketile");
+		}
 		return;
 	}	
 
@@ -274,6 +327,7 @@ function update() {
     for (let c = 0; c < width; c++) {
         let currTile = document.getElementById(row.toString() + '-' + c.toString());
         let letter = currTile.innerText;
+		currTile.classList.remove("poptile");
 		if (letter =="" && gameMode == 0){
 		currTile.classList.add("easyguess");
 		currTile.innerText = "";
@@ -301,17 +355,18 @@ function update() {
     for (let c = 0; c < width; c++) {
         let currTile = document.getElementById(row.toString() + '-' + c.toString());
         let letter = currTile.innerText;
+		currTile.classList.add("poptile");
 		//Is it in the correct position?
 		if (word[c] == letter) {
-			currTile.classList.add("correct");
-		//disable hint button if first letter is correct 			
+			//disable hint button if first letter is correct 			
 			if (c == 0) {
-				document.getElementById("hint").disabled = true;
 				if (hintSwitch == 0){
-				document.getElementById("answer").style.color = "cyan";
-				document.getElementById("answer").innerText = "You have identified the First Letter.\nHint is now disabled.";	
+				document.getElementById("hint").style.visibility = 'hidden';	
+				document.getElementById("answer").style.color = "#6AAA64";
+				document.getElementById("answer").innerText = "YOU HAVE IDENTIFIED THE FIRST LETTER.\nHINT IS NOW DISABLED.";	
 				}	
-			}
+			}				
+			currTile.classList.add("correct");
 			let keyTile = document.getElementById("Key" + letter);
 			keyTile.classList.remove("present");
 			keyTile.classList.add("correct");
@@ -319,13 +374,22 @@ function update() {
 			correct += 1;
 			letterCount[letter] -= 1; //deduct the letter count
 		}
-
-	
 		if (correct == width) {
-			document.getElementById("answer").style.color = "green";
-			document.getElementById("answer").innerText = "Congratulations! \n You have identified the " +gameName +" successfully.";
+			document.getElementById("hint").style.visibility = 'initial';
+			document.getElementById("answer").style.color = "#6AAA64";
+			document.getElementById("answer").innerText = "CONGRATULATIONS! \n YOU HAVE IDENTIFIED THE " +gameName +" SUCCESSFULLY.";
+			for (let c = 0; c < width; c++) {
+				let winTile = document.getElementById(row.toString() + '-' + c.toString());
+				winTile.classList.remove("poptile");
+				winTile.classList.add("animated");	
+			}				
+			localStorage.totalgwins = Number(localStorage.totalgwins)+ 1;
+			localStorage.totalgtime = Number(localStorage.totalgtime)+ timer;		
+			localStorage.averagegtime = Math.round(localStorage.totalgtime/localStorage.totalgwins);
+			document.getElementById("wins").innerHTML = "Total Wins: " + localStorage.totalgwins;
+			document.getElementById("time").innerHTML = "Avg. Time: " + localStorage.averagegtime + "s";
 			gameOver = true;
-		}
+		}		
     }
 
     //go again and mark which ones are present but in wrong position

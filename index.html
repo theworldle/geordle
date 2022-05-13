@@ -24,15 +24,35 @@
 	<link href="https://sank0403.github.io/geordle/mapicon.jpg" rel="apple-touch-icon" />	<!--This is the phone icon web title image-->		
 </head>
 <body>
-	<center><img class="headerimage" src="maporig.jpg"><br><div id="title">GEORDLE</div><br>
-	<button data-modal-target="#modal">Game Rules</button> 
+	<center><img class="headerimage" src="maporig.jpg">
+	<div id="title">
+		<div class="waviy">
+			<span style="--i:1">G</span>
+			<span style="--i:2">E</span>
+			<span style="--i:3">O</span>
+			<span style="--i:4">R</span>
+			<span style="--i:5">D</span>
+			<span style="--i:6">L</span>
+			<span style="--i:7">E</span>
+		</div>
+	</div>
+	<button data-modal-target="#modal" class="buttonrad">Rules</button> 
     <!--&nbsp; &nbsp;  MODE :-     <input type="button" id="mode" value="EASY" onclick="toggle(this); "></center>-->
 	<!-- &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;  -->
-	<input type="button" id="hint" value="Show 1st Letter" onclick="this.disabled=true; hint();">	 
-	<input type="button" id="giveup" value="Give Up" onclick="giveUp();">  </center>	
+	<input type="button" id="hint" value="Hint" onclick="this.disabled=true; hint();" class="buttonrad">	 
+	<input type="button" id="giveup" value="Give Up" onclick="giveUp();" class="buttonrad">  </center>	
 	<div class="modal" id="modal">
 		<div class="modal-header">
-			<div class="title">How To Play</div>	  
+			<div class="title"><strong>
+					<!-- How To Play -->
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12 text-center">
+								<h3 class="animate-charcter">How To Play</h3>
+							</div>
+						</div>
+					</div>
+				</strong></div>
 				<button data-close-button class="close-button">&times;</button>
 		</div>
 		<div class ="modal-body">
@@ -46,20 +66,58 @@
 		  <br><br>
 		  In the Hard Mode, the lengths of the guesses and the answer MUST match. This mode is designed for Experts. -->
 		  <br><br>
+		  Lengths of your guesses does not matter, as long as it is a valid COUNTRY/CAPITAL (depending on the game type). 		  
+		  <br><br>
 		  Use the Hint button, to reveal the first letter. This can be used only once per game. 	  
 		  <br><br>
-		  After each guess, the colour of the tiles will change to show how close your guess was to the word.
+		  After each guess, the colour of the tiles will change to show how close your guess was to the answer.
 		  <br><br>
-		  <img class="colorimage" src="color.PNG"><br>
-		  <h3><center>Play multiple times a day!</h3>
-		  <!-- MODE :- <input type="button" id="mode" value="EASY" onclick="toggle(this);"></center> -->
-		  <footer id="footer">
-		  <a href="mailto: geowordle@gmail.com">Contact</a>
-		      </footer>
+		  <u><b>Examples</b></u><br><br>
+			<div style="float:left; display:flex;">
+				<span class="tile correct">D</span>
+				<span class="tile absent">O</span>
+				<span class="tile absent">D</span>
+				<span class="tile absent">O</span>
+				<span class="tile absent">M</span>
+				<span class="tile absent">A</span>
+			</div>
+			<br><br><br>
+			The letter 'D' is in the Answer, and in the right spot.
+			<br><br>
+			<div style="float:left; display:flex;">
+				<span class="tile absent">B</span>
+				<span class="tile present">A</span>
+				<span class="tile absent">N</span>
+				<span class="tile absent">G</span>
+				<span class="tile absent">U</span>
+				<span class="tile absent">I</span>
+			</div>
+			<br><br><br>	
+			The letter 'A' is in the Answer, but in the wrong spot.
+			<br><br>			
+			<div style="float:left; display:flex;">
+				<span class="tile absent">A</span>
+				<span class="tile absent">S</span>
+				<span class="tile absent">M</span>
+				<span class="tile absent">A</span>
+				<span class="tile absent">R</span>
+				<span class="tile absent">A</span>
+			</div>
+			<br><br><br>	
+			None of these letters are in the Answer at all.		
+			<br><br>
+		  <center><b>Play multiple times a day!<b></center>
+		  <div class="email"><a href="mailto: geowordle@gmail.com">📧</a></div>
 		</div>		
 	</div>
 	<div id="overlay"></div>
 		<hr>
+    <div id="stats"> 
+		<div id="stats-item">
+		<span id="wins"></span>
+		<span id="time"></span>
+		</div>	
+	</div>		
         <br>
     <div id="board"></div>
         <br>
