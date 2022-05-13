@@ -174,19 +174,6 @@ function intialize() {
         }
         document.body.appendChild(keyboardRow);
     }
-   		var mybr = document.createElement('br');
-		document.body.appendChild(mybr);
-		var mybr = document.createElement('br');
-		document.body.appendChild(mybr);
-		var button = document.createElement("button");
-		button.innerText = "Buy Me a Coffee❤️";
-		// attach the event
-		button.addEventListener('click', function(){
-		  window.open('https://www.buymeacoffee.com/sank0403/', '_blank'); // _blank will open the site in a new tab
-		});
-		document.body.appendChild(button);
-		button.classList.add("buttoncoffee");
-
     // Listen for Key Press
     document.addEventListener("keyup", (e) => {
         processInput(e);
