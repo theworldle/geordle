@@ -370,7 +370,7 @@ function update() {
 		}
 		if (correct == width) {
 			document.getElementById("answer").style.color = "#6AAA64";
-			document.getElementById("answer").innerText = gameName +" IDENTIFIED SUCCESSFULLY IN " + timer + "SECs".\n CONGRATULATIONS! REFRESH TO TRY AGAIN.";
+			document.getElementById("answer").innerText = gameName +" IDENTIFIED SUCCESSFULLY IN " + timer + "SECs.\n CONGRATULATIONS! REFRESH TO TRY AGAIN.";
 			//console.log(timer);
 			for (let c = 0; c < width; c++) {
 				let winTile = document.getElementById(row.toString() + '-' + c.toString());
