@@ -121,7 +121,7 @@ function intialize() {
             document.getElementById("board").appendChild(tile);
         }
     }
-	
+	document.getElementById("mode").innerHTML += gameName;
 	document.getElementById("wins").innerHTML = "Total Wins: " + localStorage.totalgwins;
 	if (localStorage.totalgwins == 0){
 		document.getElementById("time").innerHTML = "Avg. Time: 0s";
