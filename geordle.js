@@ -18,9 +18,9 @@ function onTimer() {
 var gameMode = 0;
 var gameType = Math.round(Math.random()*1);
 var gameName = "";
-var hintType = 0;
+var hintIndex = 0;
 var hintSwitch = 0;
-
+var hintPosn = [];
 if (gameType==1){
 	//alert("The Mystery Word is a CAPITAL");
 	gameName = "CAPITAL";
@@ -132,7 +132,7 @@ function intialize() {
     let keyboard = [
         ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"],
         ["A", "S", "D", "F", "G", "H", "J", "K", "L"],
-        ["Enter", "Z", "X", "C", "V", "B", "N", "M", "⌫" ]
+        ["⏎", "Z", "X", "C", "V", "B", "N", "M", "⌫" ]
     ]
 	
 /*     let keyboard = [
@@ -151,7 +151,7 @@ function intialize() {
 
             let key = currRow[j];
             keyTile.innerText = key;
-            if (key == "Enter") {
+            if (key == "⏎") {
                 keyTile.id = "Enter";
             }
             else if (key == "⌫") {
@@ -163,7 +163,7 @@ function intialize() {
 
             keyTile.addEventListener("click", processKey);
 
-            if (key == "Enter") {
+            if (key == "⏎" || key == "⌫"){
                 keyTile.classList.add("enter-key-tile");
             } else {
                 keyTile.classList.add("key-tile");
@@ -183,33 +183,57 @@ function hint() {
 	if (!gameOver) {
 		//alert("Hint is now pressed");
 		hintSwitch = 1;
-		if (col != hintType){
-			for (let c = col-1; c >=hintType; c--) {
+		if (hintPosn.length > 0){
+			for (let j = 0; j < hintPosn.length; j++){
+				if (j != hintPosn[j]){
+					hintIndex = j;
+					break;
+				}
+				else{
+					hintIndex = j+1;
+				}
+			}
+		}
+		else{
+			hintIndex = 0;
+		}
+
+		if (col != hintIndex){
+			for (let c = col-1; c >=hintIndex; c--) {
 				let currTile = document.getElementById(row.toString() + '-' + c.toString());
 				currTile.innerText = " ";
 				currTile.classList.remove("poptile");
 				col -= 1;
 			}	
 		}	
-		for (let c = 0; c <= hintType; c++) {
-			let currTile = document.getElementById(row.toString() + '-' + c);
-			currTile.innerText = word[c];
-			currTile.classList.add("correct");		
-			col =  c + 1;			
+		for (let c = 0; c <= hintIndex; c++) {
+			if (c < width){
+				let currTile = document.getElementById(row.toString() + '-' + c);
+				currTile.innerText = word[c];
+				hintPosn.push(c);
+				hintPosn.sort();
+				hintPosn = [...new Set(hintPosn)];		
+				currTile.classList.add("correct");			
+				col =  c + 1;	
+				document.getElementById("answer").style.color = "#6AAA64";
+				document.getElementById("answer").innerText = "ONE LETTER REVEALED!\n FIVE SECONDS PENALTY.";				
+			}	
+			else{
+				document.getElementById("answer").style.color = "red";
+				document.getElementById("answer").innerText = "ALL HINTS USED!";				
+			}
 		}	
-		//let currTile = document.getElementById(row.toString() + '-' + hintType);
+		//let currTile = document.getElementById(row.toString() + '-' + hintIndex);
 /* 		if (currTile.innerText == ""){
-			hintType = 1;
+			hintIndex = 1;
 		} */	
-		//currTile.innerText = word[hintType];
+		//currTile.innerText = word[hintIndex];
 		//currTile.classList.add("correct");
-/* 		if (hintType == 1){
+/* 		if (hintIndex == 1){
 				col += 1;
 		} */
-		hintType += 1;	
+		//hintIndex += 1;	
 		timer += 5;			
-		document.getElementById("answer").style.color = "#6AAA64";
-		document.getElementById("answer").innerText = "ONE LETTER REVEALED!\n FIVE SECONDS PENALTY.";
 	}
 }
 
@@ -364,13 +388,16 @@ function update() {
 			let keyTile = document.getElementById("Key" + letter);
 			keyTile.classList.remove("present");
 			keyTile.classList.add("correct");
-
 			correct += 1;
 			letterCount[letter] -= 1; //deduct the letter count
+			hintPosn.push(c);
+			hintPosn.sort();
+			hintPosn = [...new Set(hintPosn)];			
 		}
+
 		if (correct == width) {
 			document.getElementById("answer").style.color = "#6AAA64";
-			document.getElementById("answer").innerText = gameName +" IDENTIFIED SUCCESSFULLY IN " + timer + "s.\n CONGRATULATIONS! REFRESH TO TRY AGAIN.";
+			document.getElementById("answer").innerHTML = gameName +" SUCCESSFULLY IDENTIFIED IN " + timer + "s.\n CONGRATULATIONS! REFRESH TO PLAY AGAIN.";
 			//console.log(timer);
 			for (let c = 0; c < width; c++) {
 				let winTile = document.getElementById(row.toString() + '-' + c.toString());
