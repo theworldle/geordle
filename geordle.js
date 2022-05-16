@@ -410,7 +410,7 @@ function intialize() {
 					document.getElementById("answer").innerText = "STREAK INTACT! THOUGH, NO STARS THIS TIME.";
 				}
 				else if (Number(localStorage.gdstarscnt) > 0){
-					if (localStorage.gdstarscnt = 1){
+					if (localStorage.gdstarscnt == 1){
 						document.getElementById("answer").innerText = "GREAT GOING! YOU WON " + localStorage.gdstarscnt +" STAR TODAY.";
 					}
 					else {
@@ -640,7 +640,7 @@ function processInput(e) {
 				document.getElementById("answer").innerText = "STREAK INTACT! THOUGH, NO STARS THIS TIME.";
 			}
 			else if (Number(localStorage.gdstarscnt) > 0){
-					if (localStorage.gdstarscnt = 1){
+					if (localStorage.gdstarscnt == 1){
 						document.getElementById("answer").innerText = "GREAT GOING! YOU WON " + localStorage.gdstarscnt +" STAR TODAY.";
 					}
 					else {
