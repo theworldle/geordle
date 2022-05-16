@@ -345,6 +345,7 @@ a { text-decoration: none; }
 	text-align: left;
 	color: white;
 	font-size: 12px;
+	text-align:justify;	
 }
 
 #overlay {
