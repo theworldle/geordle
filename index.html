@@ -9,6 +9,12 @@
 	  
 	  gtag('config', 'G-MEBRVZNPE4');
 	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+	<!-- 	<script src="https://cdn.jsdelivr.net/npm/tsparticles"></script>
+	<script src="https://cdn.jsdelivr.net/npm/tsparticles-preset-confetti"></script> -->
+	<!-- <script src="https://cdn.jsdelivr.net/npm/tsparticles-preset-confetti/dist/tsparticles.preset.confetti.bundle.min.js"></script> -->
+	<script
+		src="https://cdn.jsdelivr.net/npm/tsparticles-preset-confetti@1.22.0/tsparticles.preset.confetti.bundle.min.js"></script>	
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -24,6 +30,18 @@
 	<link href="https://sank0403.github.io/geordle/mapicon.jpg" rel="apple-touch-icon" />	<!--This is the phone icon web title image-->		
 </head>
 <body>
+	<button id="btnParty" type="button" hidden></button>
+	<div id="tsparticles"></div>
+	<div id="stats">
+		<div id="stats-item">
+			<span class="stats-item">
+				<class data-modal-target="#modal" id="rulesbutton"><img src="rulesicon.png" style="width:30px;height:30px;">
+			</span>	
+			<span class="stats-item">
+				<class data-summary-target="#summary" id="statsbutton"><img src="statsicon.png" style="width:40px;height:30px;">
+			</span>			
+		</div>
+	</div>		
 	<center><img class="headerimage" src="maporig.jpg">
 	<div id="title">
 		<div class="waviy">
@@ -36,12 +54,30 @@
 			<span style="--i:7">E</span>
 		</div>
 	</div>
-	<button data-modal-target="#modal" class="buttonrad">Rules❓</button> 
+	<div class="waviy1">
+		<span style="--i:1">d</span>
+		<span style="--i:2">a</span>
+		<span style="--i:3">i</span>
+		<span style="--i:4">l</span>
+		<span style="--i:5">y</span>
+		<span style="--i:6"> </span>
+		<span style="--i:7">g</span>
+		<span style="--i:8">e</span>
+		<span style="--i:9">o</span>
+		<span style="--i:10">r</span>
+		<span style="--i:11">d</span>
+		<span style="--i:12">l</span>
+		<span style="--i:13">e</span>		
+		<span style="--i:14"> </span>
+		<span style="--i:15">#</span>
+		<span style="--i:16"></span>
+		<span style="--i:17" id="daycount"></span>
+	</div><br>		
+		<input type="button" id="" value="PRACTICE🌎" onclick="window.open('https://sank0403.github.io/geordle/practice/','_blank'); this.blur();" class="buttonrad">				
+		<input type="button" value="❤️GEORDLE️" onclick="window.open('https://www.buymeacoffee.com/sank0403/','_blank'); this.blur();" class="buttonrad">		
     <!--&nbsp; &nbsp;  MODE :-     <input type="button" id="mode" value="EASY" onclick="toggle(this); "></center>-->
 	<!-- &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;  -->
 	<!-- <input type="button" id="hint" value="Hint💡" onclick="this.disabled=true; hint();" class="buttonrad">	  -->
-	<input type="button" id="hint" value="Hint💡" onclick="hint(); this.blur();" class="buttonrad">
-	<input type="button" id="giveup" value="Give Up👎" onclick="giveUp(); this.blur();" class="buttonrad">  </center>	
 	<div class="modal" id="modal">
 		<div class="modal-header">
 			<div class="title"><strong>
@@ -57,74 +93,112 @@
 				<button data-close-button class="close-button">&times;</button>
 		</div>
 		<div class ="modal-body">
-		  GEORDLE is a spin-off on the popular <a href="https://www.nytimes.com/games/wordle/index.html"><b>WORDLE</b></a> game for Geography Lovers. The rules remain mostly the same. 
+		  GEORDLE is a spin-off on the popular <a href="https://www.nytimes.com/games/wordle/index.html"><b>WORDLE</b></a> game for Geography Lovers. 
 		  <br><br>
-		  Try names of COUNTRIES or CAPITALS depending on the Game Mode. This is a random selection as it is important to know CAPITALS too :).
+		  Try to identify the COUNTRY and its CAPITAL using the letters on the Keyboard <b>ONE AT A TIME<b>. If the letter you selected is part of the COUNTRY or CAPITAL, those tiles will be marked as correct. 
 		  <br><br>
-		  Guess the COUNTRY/CAPITAL within the allowed number of tries. Hit the enter button to submit.
-<!--          <br><br>
+		  Each incorrect letter will cost you a Life. You have a total of 5 lives after which you lose the game. Lives Remaining are depicted using 🔴 on the Game Board.
+<!--      <br><br>
 		  In the Easy Mode, the length of the guess NEED NOT match the lenth of the answer. To challenge yourself, try the Hard Mode.
 		  <br><br>
 		  In the Hard Mode, the lengths of the guesses and the answer MUST match. This mode is designed for Experts. -->
 		  <br><br>
-		  Lengths of your guesses does not matter, as long as it is a valid COUNTRY/CAPITAL (depending on the Game Mode). 		  
+		  If you identify the COUNTRY and CAPITAL successfully, before running out of all lives, you convert the remaining lives into ⭐'s. You can get a maximum of 5⭐'s every day.   
 		  <br><br>
-		  Use the Hint button, to reveal ONE letter. There is a 5 sec time penalty for each use.  
+		  Use the Practice Button, to play an unlimited mode to improve your COUNTRY and CAPITAL IQ.  
 		  <br><br>
-		  After each guess, the colour of the tiles will change to show how close your guess was to the answer.
-		  <br><br>
-		  <u><b>Examples</b></u><br><br>
+		  <center><b>EXAMPLES</b><br></center>
+		  <br><div><u>COUNTRY</u></div><br>
 			<div style="float:left; display:flex;">
+				<span class="tile "></span>
+				<span class="tile "></span>
 				<span class="tile correct">D</span>
-				<span class="tile absent">O</span>
-				<span class="tile absent">D</span>
-				<span class="tile absent">O</span>
-				<span class="tile absent">M</span>
-				<span class="tile absent">A</span>
+				<span class="tile "></span>
+				<span class="tile "></span>
+				<span class="tile "></span>
 			</div>
 			<br><br><br>
-			The letter 'D' is in the Answer, and in the right spot.
-			<br><br>
+			The letter 'D' is in the 3rd spot of the Country.
+			<br><br>	
+		  <br><div><u>CAPITAL</u></div><br>
 			<div style="float:left; display:flex;">
-				<span class="tile absent">B</span>
-				<span class="tile present">A</span>
-				<span class="tile absent">N</span>
-				<span class="tile absent">G</span>
-				<span class="tile absent">U</span>
-				<span class="tile absent">I</span>
+				<span class="tile correct">A</span>
+				<span class="tile "></span>
+				<span class="tile "></span>
+				<span class="tile correct">A</span>
+				<span class="tile "></span>
+				<span class="tile correct">A</span>
 			</div>
-			<br><br><br>	
-			The letter 'A' is in the Answer, but in the wrong spot.
+			<br><br><br>
+			The letter 'A' is in the 1st, 4th and 6th spot of the Capital.
 			<br><br>			
-			<div style="float:left; display:flex;">
-				<span class="tile absent">A</span>
-				<span class="tile absent">S</span>
-				<span class="tile absent">M</span>
-				<span class="tile absent">A</span>
-				<span class="tile absent">R</span>
-				<span class="tile absent">A</span>
-			</div>
-			<br><br><br>	
-			None of these letters are in the Answer at all.		
-			<br><br>
-		  <center><b>Play multiple times a day!<b></center>
-		  <div class="email"><a href="mailto: geowordle@gmail.com">📧</a></div>
+		  <center><b>A new GEORDLE will be available each Day!<b></center>
 		</div>		
 	</div>
+	<div class="summary" id="summary">
+		<div class="summary-header">
+			<div class="title"><strong>
+					<!-- Statistics -->
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12 text-center">
+								<h3 class="animate-charcter">Statistics</h3>
+							</div>
+						</div>
+					</div>
+				</strong></div>
+			<button data-close1-button class="close-button">&times;</button>
+		</div>
+		<div class="summary-body">
+			<div id="stats-item">
+				<span id="6" class="summary-item"></span>
+				<span id="7" class="summary-item"></span>
+				<span id="8" class="summary-item"></span>
+				<span id="9" class="summary-item"></span>
+			</div>
+			<br>
+			<br>
+			<canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+			<br>
+
+			<!-- The button used to copy the text -->
+			<div class="button-row">
+				&nbsp;
+				<button id="HTMLButton" class="buttonrad1" onclick="myFunction(); this.blur();">Share Stats🔊</button>
+				&nbsp; &nbsp; &nbsp; &nbsp;
+				<a href="https://www.buymeacoffee.com/sank0403/" target="_"><input type="button" class="buttonrad1" onclick="this.blur();"
+						id="CoffeButton" value="Buy Me a Coffee❤️" /><a>
+			</div>
+		</div>
+		<hr>
+		<div id="footer">
+			<div>
+				<div id="bbhdr">New Game In</div>
+				<div id="bb"></div>
+			</div>
+			<div>
+				<div id="pzlhdr">Try a different puzzle.</div>
+				<div id="pzl"><b><a href="https://indlegame.github.io/indle" target="_">Play <u>INDLE</u> 🇮🇳 </a></b>
+				</div>
+			</div>
+		</div>
+		<center><div class="email"><a href="mailto: geowordle@gmail.com">📧</a></div></center>
+		<br>
+	</div>
 	<div id="overlay"></div>
-		<hr>			
-    <div id="stats"> 
-		<div id="stats-item">
-		<span id="wins"></span>
-		<span id="mode">Mode: </span>		
-		<span id="time"></span>
-		</div>			
+	<div id="overlay1"></div>
+	<hr>			
+    <div id="lives">
 	</div>	
-		<input type="button" value="❤️Buy Me a Coffee❤️" onclick="window.open('https://www.buymeacoffee.com/sank0403/','_blank')" class="buttoncoffee"><br>
-    <div id="board"></div>
-    <h1 id="answer"></h1>
-	   <br><br>
+    <div id="board">
+		<br><div><u>COUNTRY</u></div><br>
+		<div id="boardfirst"></div>
+		<br><div><u>CAPITAL</u></div><br>
+		<div id="boardlast"></div>	
+	</div>
+	<br>
+    <div id="answer"></div>
+	<br><br>
     </body>
 </html>
-
 
