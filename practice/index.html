@@ -1,0 +1,131 @@
+<html lang="en">
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-MEBRVZNPE4"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	  
+	  gtag('config', 'G-MEBRVZNPE4');
+	</script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Geordle - Wordle for Countries and Capitals</title>
+	<link href="practice.css" rel="stylesheet">
+	<script defer src="practice.js"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <!-- add icon link for all standard browsers -->
+    <link rel = "icon" href = "https://sank0403.github.io/geordle/mapicon.jpg" 
+            type = "image/x-icon">  
+	<link rel="manifest" href="https://sank0403.github.io/geordle/geordle_manifest.json" />		<!--for shortcut icons and transitions-->	
+	<link href="https://sank0403.github.io/geordle/mapicon.jpg" rel="icon shortcut" sizes="3232" /> <!--follow same as indle - usually a smaller version-->
+	<link href="https://sank0403.github.io/geordle/mapicon.jpg" rel="apple-touch-icon" />	<!--This is the phone icon web title image-->		
+</head>
+<body>
+	<center><img class="headerimage" src="maporig.jpg">
+	<div id="title">
+		<div class="waviy">
+			<span style="--i:1">G</span>
+			<span style="--i:2">E</span>
+			<span style="--i:3">O</span>
+			<span style="--i:4">R</span>
+			<span style="--i:5">D</span>
+			<span style="--i:6">L</span>
+			<span style="--i:7">E</span>
+		</div>
+	</div>
+	<button data-modal-target="#modal" class="buttonrad">❓RULES</button> 
+    <!--&nbsp; &nbsp;  MODE :-     <input type="button" id="mode" value="EASY" onclick="toggle(this); "></center>-->
+	<!-- &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;  -->
+	<!-- <input type="button" id="hint" value="Hint💡" onclick="this.disabled=true; hint();" class="buttonrad">	  -->
+	<input type="button" id="hint" value="💡HINT" onclick="hint(); this.blur();" class="buttonrad">
+	<input type="button" id="giveup" value="GIVE UP👎" onclick="giveUp(); this.blur();" class="buttonrad"> 
+	<input type="button" id="" value="DAILY🌎" onclick="window.open('https://sank0403.github.io/geordle/','_blank'); this.blur();" class="buttonrad">
+	</center>	
+	<div class="modal" id="modal">
+		<div class="modal-header">
+			<div class="title"><strong>
+					<!-- How To Play -->
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12 text-center">
+								<h3 class="animate-charcter">How To Play</h3>
+							</div>
+						</div>
+					</div>
+				</strong></div>
+				<button data-close-button class="close-button">&times;</button>
+		</div>
+		<div class ="modal-body">
+		  GEORDLE is a spin-off on the popular <a href="https://www.nytimes.com/games/wordle/index.html"><b>WORDLE</b></a> game for Geography Lovers. The rules remain mostly the same. 
+		  <br><br>
+		  Try names of COUNTRIES or CAPITALS depending on the Game Mode. This is a random selection as it is important to know CAPITALS too :).
+		  <br><br>
+		  Guess the COUNTRY/CAPITAL within the allowed number of tries. Hit the enter button to submit.
+<!--          <br><br>
+		  In the Easy Mode, the length of the guess NEED NOT match the lenth of the answer. To challenge yourself, try the Hard Mode.
+		  <br><br>
+		  In the Hard Mode, the lengths of the guesses and the answer MUST match. This mode is designed for Experts. -->
+		  <br><br>
+		  Lengths of your guesses does not matter, as long as it is a valid COUNTRY/CAPITAL (depending on the Game Mode). 		  
+		  <br><br>
+		  Use the Hint button, to reveal ONE letter. There is a 5 sec time penalty for each use.  
+		  <br><br>
+		  After each guess, the colour of the tiles will change to show how close your guess was to the answer.
+		  <br><br>
+		  <u><b>Examples</b></u><br><br>
+			<div style="float:left; display:flex;">
+				<span class="tile correct">D</span>
+				<span class="tile absent">O</span>
+				<span class="tile absent">D</span>
+				<span class="tile absent">O</span>
+				<span class="tile absent">M</span>
+				<span class="tile absent">A</span>
+			</div>
+			<br><br><br>
+			The letter 'D' is in the Answer, and in the right spot.
+			<br><br>
+			<div style="float:left; display:flex;">
+				<span class="tile absent">B</span>
+				<span class="tile present">A</span>
+				<span class="tile absent">N</span>
+				<span class="tile absent">G</span>
+				<span class="tile absent">U</span>
+				<span class="tile absent">I</span>
+			</div>
+			<br><br><br>	
+			The letter 'A' is in the Answer, but in the wrong spot.
+			<br><br>			
+			<div style="float:left; display:flex;">
+				<span class="tile absent">A</span>
+				<span class="tile absent">S</span>
+				<span class="tile absent">M</span>
+				<span class="tile absent">A</span>
+				<span class="tile absent">R</span>
+				<span class="tile absent">A</span>
+			</div>
+			<br><br><br>	
+			None of these letters are in the Answer at all.		
+			<br><br>
+		  <center><b>Play multiple times a day!<b></center>
+		  <div class="email"><a href="mailto: geowordle@gmail.com">📧</a></div>
+		</div>		
+	</div>
+	<div id="overlay"></div>
+		<hr>			
+    <div id="stats"> 
+		<div id="stats-item">
+		<span id="wins"></span>
+		<span id="mode">Mode: </span>		
+		<span id="time"></span>
+		</div>			
+	</div>	
+		<input type="button" value="❤️Buy Me a Coffee❤️" onclick="window.open('https://www.buymeacoffee.com/sank0403/','_blank')" class="buttoncoffee"><br>
+    <div id="board"></div>
+    <h1 id="answer"></h1>
+	   <br><br>
+    </body>
+</html>
+
