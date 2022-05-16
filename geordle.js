@@ -557,7 +557,7 @@ function processInput(e) {
 		}
 		else{
 			document.getElementById("answer").style.color = "red";
-			document.getElementById("answer").innerText = "ONE LIFE LOST!";	
+			document.getElementById("answer").innerText = "YOU LOST A LIFE!";	
 		}
 		setTimeout(removeblink, 3000);	
 	}
