@@ -263,10 +263,10 @@ color4 = "brown"
 color5 = "brown"
 colorx = "brown"
 function UpdateChart() {
-	var xValues = ["0⭐", "1⭐", "2⭐", "3⭐", "4⭐", "5⭐", "X"];
-	var yValues = [localStorage.stargd0count, localStorage.stargd1count, localStorage.stargd2count, localStorage.stargd3count, localStorage.stargd4count, localStorage.stargd5count, localStorage.stargdxcount];
+	var xValues = ["5⭐", "4⭐", "3⭐", "2⭐", "1⭐", "0⭐", "X"];;
+	var yValues = [localStorage.stargd5count, localStorage.stargd4count, localStorage.stargd3count, localStorage.stargd2count, localStorage.stargd1count, localStorage.stargd0count, localStorage.stargdxcount];
 	//var barColors = ["red", "green","blue","orange","brown","yellow","cyan","white"];
-	var barColors = [color0, color1, color2, color3, color4, color5, colorx];
+	var barColors = [color5, color4, color3, color2, color1, color0, colorx];
 
 	new Chart("myChart", {
 		type: "bar",
@@ -281,7 +281,7 @@ function UpdateChart() {
 			legend: { display: false },
 			title: {
 				display: true,
-				text: "⭐STAR DISTRIBUTION⭐"
+				text: "⭐ STAR DISTRIBUTION ⭐"
 			}
 		}
 	});
@@ -385,10 +385,10 @@ function intialize() {
 		})
 
 	var winpct = Math.round(localStorage.totalgdwins / localStorage.totalgdplayed * 100);
-	document.getElementById(6).innerText = "Played: " + localStorage.totalgdplayed;
-	document.getElementById(7).innerText = "Win %: " + winpct;
-	document.getElementById(8).innerText = "Streak: " + localStorage.totalgdstreak;
-	document.getElementById(9).innerText = "Stars: " + localStorage.totalgdstars;
+	document.getElementById(6).innerText = "PLAYED: " + localStorage.totalgdplayed;
+	document.getElementById(7).innerText = "WIN %: " + winpct;
+	document.getElementById(8).innerText = "STREAK: " + localStorage.totalgdstreak;
+	document.getElementById(9).innerText = "STARS: " + localStorage.totalgdstars;
 
 	//Current Day Game Over
 	if (localStorage.getItem('gameovergd' + days) == "1") {
@@ -585,10 +585,10 @@ function processInput(e) {
 			localStorage.totalgdplayed = Number(localStorage.totalgdplayed) + 1;	
 			localStorage.totalgdstreak = 0;			
 			var winpct = Math.round(localStorage.totalgdwins / localStorage.totalgdplayed * 100);
-			document.getElementById(6).innerText = "Played: " + localStorage.totalgdplayed;
-			document.getElementById(7).innerText = "Win %: " + winpct;
-			document.getElementById(8).innerText = "Streak: " + localStorage.totalgdstreak;
-			document.getElementById(9).innerText = "Stars: " + localStorage.totalgdstars;			
+			document.getElementById(6).innerText = "PLAYED: " + localStorage.totalgdplayed;
+			document.getElementById(7).innerText = "WIN %: " + winpct;
+			document.getElementById(8).innerText = "STREAK: " + localStorage.totalgdstreak;
+			document.getElementById(9).innerText = "STARS: " + localStorage.totalgdstars;			
 			displayFooter();
 			localStorage.gamegdwon = 0;
 			setTimeout(OpenStats, 3200);				
@@ -663,10 +663,10 @@ function processInput(e) {
 			localStorage.totalgdstreak = Number(localStorage.totalgdstreak) + 1;
 			localStorage.totalgdstars = Number(localStorage.totalgdstars) + Number(localStorage.gdstarscnt);
 			var winpct = Math.round(localStorage.totalgdwins / localStorage.totalgdplayed * 100);
-			document.getElementById(6).innerText = "Played: " + localStorage.totalgdplayed;
-			document.getElementById(7).innerText = "Win %: " + winpct;
-			document.getElementById(8).innerText = "Streak: " + localStorage.totalgdstreak;
-			document.getElementById(9).innerText = "Stars: " + localStorage.totalgdstars;			
+			document.getElementById(6).innerText = "PLAYED: " + localStorage.totalgdplayed;
+			document.getElementById(7).innerText = "WIN %: " + winpct;
+			document.getElementById(8).innerText = "STREAK: " + localStorage.totalgdstreak;
+			document.getElementById(9).innerText = "STARS: " + localStorage.totalgdstars;			
 			displayFooter();
 			localStorage.gamegdwon = 1;
 			setTimeout(ConfettiStart, 1000);
