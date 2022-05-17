@@ -116,9 +116,9 @@ if (localStorage.getItem('gameovergd' + days) != 0 && localStorage.getItem('game
 	localStorage.setItem("gdgamecnt",0);
 }
 
-for (var d = 1; d < Number(days) ; d++){
+/* for (var d = 1; d < Number(days) ; d++){
 	localStorage.removeItem('gameovergd' + d);
-}
+} */
 
 //Clipboard Code
 function myFunction() {
@@ -145,7 +145,7 @@ function myFunction() {
 					break;					
 			}
 
-	var copyText = "🌎 GEORDLE Day - " + days + " 🌎\n\n" + cluehdr + " - " + clueicon + "\n\n 🔥 Streak: " + localStorage.totalgdstreak + " | ⭐ Stars: " + localStorage.totalgdstars + "\n\nhttps://tinyurl.com/Geordle";
+	var copyText = "🌎 GEORDLE Day - " + days + " 🌎\n\n" + cluehdr + " - " + clueicon + "\n\n 🔥 Streak: " + localStorage.totalgdstreak + " | ⭐ Stars: " + localStorage.totalgdstars + "\n\nhttps://sank0403.github.io/geordle/";
 	/* Copy the text inside the text field */
 	navigator.clipboard.writeText(copyText);
 
