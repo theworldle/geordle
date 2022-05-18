@@ -157,7 +157,7 @@ function myFunction() {
 					break;					
 			}
 
-	var copyText = "🌎 GEORDLE Day - " + days + " 🌎\n\n" + cluehdr + " - " + clueicon + "\n\n 🔥 Streak: " + localStorage.totalgdstreak + " | ⭐ Stars: " + localStorage.totalgdstars + "\n\nhttps://sank0403.github.io/geordle/";
+	var copyText = "🌎 GEORDLE Day - " + days + " 🌎\n\n" + cluehdr + " - " + clueicon + "\n🔥 Streak: " + localStorage.totalgdstreak + " | ⭐ Stars: " + localStorage.totalgdstars + "\n\nhttps://tinyurl.com/geordle/";
 	/* Copy the text inside the text field */
 	navigator.clipboard.writeText(copyText);
 
