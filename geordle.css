@@ -128,7 +128,7 @@ a { text-decoration: none; }
 #pzlhdr, #pzl {
   font-weight: bold;
   font-size: 11px;
-  margin-right: 7px;
+  margin-right: 0px;
 } 
 
 #bbhdr {
@@ -520,6 +520,19 @@ a { text-decoration: none; }
 #overlay1.active {
   opacity: 1;
   pointer-events: all;
+}
+
+#ffhdr{
+	color: white;
+	font-size: 12px;
+	margin-bottom:10px;
+}
+
+#ffdtl {
+	color: darkgray;
+	font-size: 10px;
+	text-align:justify;
+	margin-bottom:10px;
 }
 
 #wins, #time{
