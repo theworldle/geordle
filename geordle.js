@@ -83,7 +83,8 @@ function displayFooter() {
 	document.getElementById("CoffeButton").style.display = "block";	
 	if (funFact[index] != countryList[index]){
 		if (flagList[index] != countryList[index]){
-			document.getElementById("ffhdr").innerHTML = flagList[index] + " TRIVIA " + flagList[index];
+			//document.getElementById("ffhdr").innerHTML = flagList[index] + " TRIVIA " + flagList[index];
+			document.getElementById("ffhdr").innerHTML = '<strong style="font-size:20px">' + flagList[index] + '</strong>' + " TRIVIA " + '<strong style="font-size:20px">' + flagList[index] + '</strong>';
 		}
 		else{
 			document.getElementById("ffhdr").innerHTML = "TRIVIA";
