@@ -522,10 +522,11 @@ a { text-decoration: none; }
   pointer-events: all;
 }
 
-#ffhdr{
+#ffhdr, #sdhdr{
 	color: white;
 	font-size: 12px;
 	margin-bottom:10px;
+	text-align: center;
 }
 
 #ffdtl {
