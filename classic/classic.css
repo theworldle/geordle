@@ -294,8 +294,8 @@ a { text-decoration: none; }
 }
 
 .key-tile {
-  width: 36px;
-  height: 55px;
+/*   width: 36px;
+  height: 55px; */
   margin: 1px;
   border: 1px solid lightgray;
   border-radius: 0%;
@@ -308,8 +308,8 @@ a { text-decoration: none; }
 }
 
 .enter-key-tile {
-  width: 56px;
-  height: 55px;
+/*   width: 56px;
+  height: 55px; */
   margin: 1px;
   border: 1px solid lightgray;
   border-radius: 15%;
