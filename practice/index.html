@@ -12,7 +12,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Geordle - Wordle for Countries and Capitals</title>
+	<title>Geordle Unlimited - Wordle for Countries and Capitals</title>
 	<link href="practice.css" rel="stylesheet">
 	<script defer src="practice.js"></script>
 	<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
@@ -36,13 +36,24 @@
 			<span style="--i:7">E</span>
 		</div>
 	</div>
+	<div class="waviy1">
+		<span style="--i:1">p</span>
+		<span style="--i:2">r</span>
+		<span style="--i:3">a</span>
+		<span style="--i:4">c</span>
+		<span style="--i:5">t</span>
+		<span style="--i:6">i</span>
+		<span style="--i:7">c</span>
+		<span style="--i:8">e</span>
+		<span style="--i:9"></span>
+		<span style="--i:10">m</span>
+		<span style="--i:11">o</span>
+		<span style="--i:12">d</span>		
+		<span style="--i:13">e</span>
+	</div><br>
 	<button data-modal-target="#modal" class="buttonrad">❓RULES</button> 
-    <!--&nbsp; &nbsp;  MODE :-     <input type="button" id="mode" value="EASY" onclick="toggle(this); "></center>-->
-	<!-- &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;  -->
-	<!-- <input type="button" id="hint" value="Hint💡" onclick="this.disabled=true; hint();" class="buttonrad">	  -->
-	<input type="button" id="hint" value="💡HINT" onclick="hint(); this.blur();" class="buttonrad">
-	<input type="button" id="giveup" value="GIVE UP👎" onclick="giveUp(); this.blur();" class="buttonrad"> 
-	<input type="button" id="" value="DAILY🌎" onclick="window.open('https://sank0403.github.io/geordle/' , '_self'); this.blur();" class="buttonrad">
+	<input type="button" id="" value="🌎DAILY" onclick="window.open('https://sank0403.github.io/geordle/' , '_self'); this.blur();" class="buttonrad">
+	<input type="button" value="❤️GEORDLE️" onclick="window.open('https://www.buymeacoffee.com/sank0403/','_blank'); this.blur();" class="buttonrad">			
 	</center>	
 	<div class="modal" id="modal">
 		<div class="modal-header">
@@ -59,73 +70,71 @@
 				<button data-close-button class="close-button">&times;</button>
 		</div>
 		<div class ="modal-body">
-		  GEORDLE is a spin-off on the popular <a href="https://www.nytimes.com/games/wordle/index.html"><b>WORDLE</b></a> game for Geography Lovers. This is the Practice Mode, where you can refresh your knowledge of COUNTRIES and CAPITALS. Switch to the Daily Mode for the actual Game, which is in a slightly different format. 
+		  GEORDLE is a spin-off on the popular <a href="https://www.nytimes.com/games/wordle/index.html"><b>WORDLE</b></a> game for Geography Lovers. 
 		  <br><br>
-		  Guess the COUNTRY/CAPITAL within the allowed number of tries. Hit the enter button to submit.
-<!--          <br><br>
+		  Try to identify the COUNTRY and its CAPITAL using the letters on the Keyboard <b>ONE AT A TIME</b>. If the letter you selected is part of the COUNTRY or CAPITAL, the corresponding tiles will be highlighted in Green. 
+		  <br><br>
+		  Each incorrect letter will cost you a Life. You have a total of 5 lives after which you lose the game. Lives Remaining are depicted using 🔴 on the Game Board.
+<!--      <br><br>
 		  In the Easy Mode, the length of the guess NEED NOT match the lenth of the answer. To challenge yourself, try the Hard Mode.
 		  <br><br>
 		  In the Hard Mode, the lengths of the guesses and the answer MUST match. This mode is designed for Experts. -->
 		  <br><br>
-		  You dont have to match the Lengths when your Enter, as long as it is a valid COUNTRY/CAPITAL depending on the Mode. For eg: if you are playing the CAPITAL Mode and Capital to be identifed
-		  is ASMARA (6 letters), you could try SUVA (less than 6 letters) since that is a valid Capital. You cannot however, try INDIA (since it is a Country and not a Capital). Similarly vice-versa for 
-		  the COUNTRY Mode. Modes are selected at random for Practice. 
+		  This is the Practice mode, where you get unlimited attempts. Switch to the DAILY Mode, where you can play the actual game.   
 		  <br><br>
-		  Use the Hint button, to reveal ONE letter at a time. There is a 5 sec time penalty for each use.  
-		  <br><br>
-		  After each guess, the colour of the tiles will change to show how close your guess was to the answer.
-		  <br><br>
-		  <u><b>Examples</b></u><br><br>
+		  In this mode mode, your attempts are timed. There is a 5 sec time penalty for each life lost.  
+		  <br><br>		  
+		  <center><b>EXAMPLES</b><br></center>
+		  <br><div><u>COUNTRY</u></div><br>
 			<div style="float:left; display:flex;">
+				<span class="tile "></span>
+				<span class="tile "></span>
 				<span class="tile correct">D</span>
-				<span class="tile absent">O</span>
-				<span class="tile absent">D</span>
-				<span class="tile absent">O</span>
-				<span class="tile absent">M</span>
-				<span class="tile absent">A</span>
+				<span class="tile "></span>
+				<span class="tile "></span>
+				<span class="tile "></span>
 			</div>
 			<br><br><br>
-			The letter 'D' is in the Answer, and in the right spot.
-			<br><br>
+			The letter 'D' is in the 3rd position of the Country.
+			<br><br>	
+		  <br><div><u>CAPITAL</u></div><br>
 			<div style="float:left; display:flex;">
-				<span class="tile absent">B</span>
-				<span class="tile present">A</span>
-				<span class="tile absent">N</span>
-				<span class="tile absent">G</span>
-				<span class="tile absent">U</span>
-				<span class="tile absent">I</span>
+				<span class="tile correct">A</span>
+				<span class="tile "></span>
+				<span class="tile "></span>
+				<span class="tile correct">A</span>
+				<span class="tile "></span>
+				<span class="tile correct">A</span>
 			</div>
-			<br><br><br>	
-			The letter 'A' is in the Answer, but in the wrong spot.
+			<br><br><br>
+			The letter 'A' is in the 1st, 4th and 6th position of the Capital.
 			<br><br>			
-			<div style="float:left; display:flex;">
-				<span class="tile absent">A</span>
-				<span class="tile absent">S</span>
-				<span class="tile absent">M</span>
-				<span class="tile absent">A</span>
-				<span class="tile absent">R</span>
-				<span class="tile absent">A</span>
-			</div>
-			<br><br><br>	
-			None of these letters are in the Answer at all.		
-			<br><br>
 		  <center><b>Practice multiple times a day!<b></center>
 		  <div class="email"><a href="mailto: geowordle@gmail.com">📧</a></div>
 		</div>		
 	</div>
 	<div id="overlay"></div>
-		<hr>			
+		<hr>				
     <div id="stats"> 
 		<div id="stats-item">
-		<span id="wins"></span>
-		<span id="mode">Mode: </span>		
+		<span id="wins"></span>	
+			<input type="button" id="" value="😊CLASSIC" onclick="window.open('https://sank0403.github.io/geordle/classic' , '_self'); this.blur();" class="buttonrad">
 		<span id="time"></span>
 		</div>			
 	</div>	
-		<input type="button" value="❤️Buy Me a Coffee❤️" onclick="window.open('https://www.buymeacoffee.com/sank0403/','_blank')" class="buttoncoffee"><br>
-    <div id="board"></div>
+	<br>
+    <div id="lives">
+	</div>	
+    <div id="board">
+		<br><div><u>COUNTRY</u></div><br>
+		<div id="boardfirst"></div>
+		<br><div><u>CAPITAL</u></div><br>
+		<div id="boardlast"></div>	
+	</div>
+	<br>
+	<hr>
     <h1 id="answer"></h1>
-	   <br><br>
+	   <br><br><br>
     </body>
 </html>
 
