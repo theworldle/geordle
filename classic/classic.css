@@ -294,7 +294,7 @@ a { text-decoration: none; }
 }
 
 .key-tile {
-  width: 36px;
+  /* width: 36px; */
   height: 55px;
   margin: 1px;
   border: 1px solid lightgray;
@@ -308,7 +308,7 @@ a { text-decoration: none; }
 }
 
 .enter-key-tile {
-  width: 56px;
+  /* width: 56px; */
   height: 55px;
   margin: 1px;
   border: 1px solid lightgray;
@@ -398,10 +398,10 @@ a { text-decoration: none; }
 	font-weight: bold;
 }
 
-/* @media screen and (min-width: 400px) {
-  .keyboard-row {
+@media screen and (min-width: 400px) {
+/*   .keyboard-row {
     width: 400px;
-  }
+  } */
   .key-tile {
     width: 36px;
   } 
@@ -411,9 +411,9 @@ a { text-decoration: none; }
 }
 
 @media screen and (max-width: 399px) and (min-width: 350px) {
-  .keyboard-row {
+/*   .keyboard-row {
     width: 350px;
-  }
+  } */
   .key-tile {
     width: 31px;
     height: 50px;
@@ -426,9 +426,9 @@ a { text-decoration: none; }
 }
 
 @media screen and (max-width: 349px) and (min-width: 310px) {
-  .keyboard-row {
+/*   .keyboard-row {
     width: 310px;
-  }
+  } */
   .key-tile {
     width: 26px;
     height: 50px;
@@ -438,4 +438,4 @@ a { text-decoration: none; }
     width: 46px;
     height: 50px;
   }   
-} */
+}
