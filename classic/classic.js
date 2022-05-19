@@ -304,6 +304,10 @@ function processInput(e) {
         gameOver = true;
 		document.getElementById("answer").style.color = "red";
         document.getElementById("answer").innerText = "THE  " +gameName +"  WAS " + word + "! HARD LUCK.\n REFRESH TO TRY AGAIN.";
+		localStorage.totalgtime = Number(localStorage.totalgtime)+ timer;		
+		localStorage.averagegtime = Math.round(localStorage.totalgtime/localStorage.totalgwins);
+		document.getElementById("wins").innerHTML = "Total Wins: " + localStorage.totalgwins;
+		document.getElementById("time").innerHTML = "Avg. Time: " + localStorage.averagegtime + "s";		
     }
 }
 
