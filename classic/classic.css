@@ -288,13 +288,13 @@ a { text-decoration: none; }
     width: auto;
     margin: 0 auto;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 	justify-content: center;
     align-items: center;
 }
 
 .key-tile {
-  width: 35px;
+  width: 36px;
   height: 55px;
   margin: 1px;
   border: 1px solid lightgray;
@@ -308,7 +308,7 @@ a { text-decoration: none; }
 }
 
 .enter-key-tile {
-  width: 55px;
+  width: 56px;
   height: 55px;
   margin: 1px;
   border: 1px solid lightgray;
