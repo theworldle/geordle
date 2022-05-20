@@ -57,7 +57,7 @@ function ConfettiStart() {
 function removeblink() {
 	if (!gameOver){
 		document.getElementById("lives").classList.remove("blink");
-		document.getElementById("answer").innerText = "";
+		//document.getElementById("answer").innerText = "";
 	}
 }
 
@@ -749,18 +749,25 @@ function processInput(e) {
 	
 	if (LetterFound == 0){
 		localStorage.gdlivescnt = Number(localStorage.gdlivescnt) + 1;
+		document.getElementById("answer").style.color = "red";
 		switch (Number(localStorage.gdlivescnt)) {
 				case 0: localStorage.gdlives = "🔴🔴🔴🔴🔴";
 					break;
 				case 1: localStorage.gdlives = "🔴🔴🔴🔴";
+					document.getElementById("answer").innerText = "FIRST LIFE LOST!"
 					break;	
 				case 2: localStorage.gdlives = "🔴🔴🔴";
+					document.getElementById("answer").innerText = "SECOND LIFE LOST!"
 					break;				
 				case 3: localStorage.gdlives = "🔴🔴";
+					document.getElementById("answer").innerText = "THIRD LIFE LOST!"				
 					break;	
 				case 4: localStorage.gdlives = "🔴";
+					document.getElementById("answer").innerText = "FOURTH LIFE LOST!"				
 					break;	
 				case 5: localStorage.gdlives = "";
+					document.getElementById("answer").innerText = "THIS IS YOUR LAST LIFE!";
+					setTimeout(FinalClue, 500);	
 					break;
 				case 6: localStorage.gdlives = "💀💀💀💀💀";
 					break;					
@@ -768,15 +775,6 @@ function processInput(e) {
 		
 		document.getElementById("lives").innerText = localStorage.gdlives;
 		document.getElementById("lives").classList.add("blink");
-		if (Number(localStorage.gdlivescnt == 5)){
-			document.getElementById("answer").style.color = "red";
-			document.getElementById("answer").innerText = "LAST LIFE ALERT!";	
-			setTimeout(FinalClue, 500);			
-		}
-		else{
-			document.getElementById("answer").style.color = "red";
-			document.getElementById("answer").innerText = "YOU LOST A LIFE!";	
-		}
 		setTimeout(removeblink, 3000);	
 	}
 	
