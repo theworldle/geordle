@@ -22,7 +22,7 @@ function onTimer() {
 function removeblink() {
 	if (!gameOver){
 		document.getElementById("lives").classList.remove("blink");
-		document.getElementById("answer").innerText = "";
+		//document.getElementById("answer").innerText = "";
 	}
 }
 
@@ -219,18 +219,25 @@ function processInput(e) {
 	if (LetterFound == 0){
 		livescnt += 1;
 		timer += 5;
+		document.getElementById("answer").style.color = "red";
 		switch (livescnt) {
-				case 0: lives = "🔴🔴🔴🔴🔴";
+				case 0: lives = "🔴🔴🔴🔴🔴";				
 					break;
 				case 1: lives = "🔴🔴🔴🔴";
+					document.getElementById("answer").innerText = "FIRST LIFE LOST!"					
 					break;	
 				case 2: lives = "🔴🔴🔴";
+					document.getElementById("answer").innerText = "SECOND LIFE LOST!"					
 					break;				
 				case 3: lives = "🔴🔴";
+					document.getElementById("answer").innerText = "THIRD LIFE LOST!"				
 					break;	
 				case 4: lives = "🔴";
+					document.getElementById("answer").innerText = "FOURTH LIFE LOST!"				
 					break;	
 				case 5: lives = "";
+					document.getElementById("answer").innerText = "THIS IS YOUR LAST LIFE!";
+					setTimeout(FinalClue, 500);					
 					break;
 				case 6: lives = "💀💀💀💀💀";
 					break;					
@@ -238,15 +245,6 @@ function processInput(e) {
 		
 		document.getElementById("lives").innerText = lives;
 		document.getElementById("lives").classList.add("blink");
-		if (livescnt == 5){
-			document.getElementById("answer").style.color = "red";
-			document.getElementById("answer").innerText = "LAST LIFE ALERT!";	
-			setTimeout(FinalClue, 500);			
-		}
-		else{
-			document.getElementById("answer").style.color = "red";
-			document.getElementById("answer").innerText = "YOU LOST A LIFE!";	
-		}
 		setTimeout(removeblink, 3000);	
 	}
 	
