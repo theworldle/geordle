@@ -646,7 +646,9 @@ function intialize() {
 						templives = templives.replace("🔴", "⭐");
 					}	
 					document.getElementById("lives").innerText = templives;
-					document.getElementById("lives").classList.add("animated");					
+					if (Number (localStorage.gdstarscnt) != 0){
+						document.getElementById("lives").classList.add("animated");
+					}				
 				}
 		}
 		else {
@@ -768,8 +770,8 @@ function processInput(e) {
 				case 4: localStorage.gdlives = "🔴";
 					document.getElementById("answer").innerText = "FOURTH LIFE LOST!"				
 					break;	
-				case 5: localStorage.gdlives = "";
-					document.getElementById("answer").innerText = "THIS IS YOUR LAST LIFE!";
+				case 5: localStorage.gdlives = flagList[index];
+					document.getElementById("answer").innerText = "LAST LIFE ALERT! FLAG REVEALED.";
 					setTimeout(FinalClue, 500);	
 					break;
 				case 6: localStorage.gdlives = "💀💀💀💀💀";
@@ -875,7 +877,9 @@ function processInput(e) {
 				templives = templives.replace("🔴", "⭐");
 			}	
 			document.getElementById("lives").innerText = templives;
-			document.getElementById("lives").classList.add("animated");
+			if (Number (localStorage.gdstarscnt) != 0){
+				document.getElementById("lives").classList.add("animated");
+			}
 			localStorage.setItem(('gameovergd' + days), 1);	
 			localStorage.totalgdplayed = Number(localStorage.totalgdplayed) + 1;
 			localStorage.totalgdwins = Number(localStorage.totalgdwins) + 1;
