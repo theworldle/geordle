@@ -299,6 +299,29 @@ a { text-decoration: none; }
   color:white;
 }
 
+#icons {
+	position: absolute;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  width: 375px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 2;
+  right: 2;
+  top: 5px;
+  text-align: center;
+}
+
+#icons-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  text-align: center;
+  color:white;
+}
+
 .disabled {
     pointer-events: none;
     opacity: 0.4;
