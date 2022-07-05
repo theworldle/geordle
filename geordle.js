@@ -132,6 +132,21 @@ if (localStorage.getItem('gameovergd' + days) != 0 && localStorage.getItem('game
 	localStorage.removeItem('gameovergd' + d);
 } */
 
+	var tierlevel = ""		
+	var tiericon = ""	
+	if (localStorage.totalgdstreak >= 10 && localStorage.totalgdstreak <= 24)  {
+		tierlevel = "Bronze (Streak 10 - 24)";
+		tiericon = "🥉"; 
+	}
+	else if (localStorage.totalgdstreak >= 25 && localStorage.totalgdstreak <= 49) {
+		tierlevel = "Silver (Streak 25 - 49)";
+		tiericon = "🥈"; 
+	}
+	else if (localStorage.totalgdstreak >= 50) {
+		tierlevel = "Gold (Streak 50+)";
+		tiericon = "🥇";
+	}	
+
 //Clipboard Code
 function myFunction() {
 	if (localStorage.gdgamecnt == 6){
@@ -156,8 +171,16 @@ function myFunction() {
 				case 6: var clueicon = "💀 💀 💀 💀 💀"
 					break;					
 			}
-
-	var copyText = "🌎 GEORDLE # " + days + " 🌎\n\n" + cluehdr + " - " + clueicon + "\n🔥 Streak: " + localStorage.totalgdstreak + " | ⭐ Stars: " + localStorage.totalgdstars + "\n\nhttps://tinyurl.com/geordle/";
+		
+    
+	if (tierlevel == ""){
+		var copyText = "🌎 GEORDLE # " + days + " 🌎\n\n" + cluehdr + " - " + clueicon + "\n🔥 Streak: " + localStorage.totalgdstreak + " | ⭐ Stars: " + localStorage.totalgdstars + "\n\nhttps://tinyurl.com/geordle/";
+	}
+	else {
+		var copyText = "🌎 GEORDLE # " + days + " 🌎\n\n" + cluehdr + " - " + clueicon + "\n🔥 Streak: " + localStorage.totalgdstreak + " | ⭐ Stars: " + localStorage.totalgdstars + "\n" + tiericon +  " Tier: " + tierlevel + "\n\nhttps://tinyurl.com/geordle/";
+	}
+			
+		
 	/* Copy the text inside the text field */
 	navigator.clipboard.writeText(copyText);
 
@@ -610,7 +633,7 @@ function intialize() {
 	var winpct = Math.round(localStorage.totalgdwins / localStorage.totalgdplayed * 100);
 	document.getElementById(6).innerText = "PLAYED: " + localStorage.totalgdplayed;
 	document.getElementById(7).innerText = "WIN %: " + winpct;
-	document.getElementById(8).innerText = "STREAK: " + localStorage.totalgdstreak;
+	document.getElementById(8).innerText = "STREAK: " + localStorage.totalgdstreak + tiericon;
 	document.getElementById(9).innerText = "STARS: " + localStorage.totalgdstars;
 
 	//Current Day Game Over
@@ -810,7 +833,7 @@ function processInput(e) {
 			var winpct = Math.round(localStorage.totalgdwins / localStorage.totalgdplayed * 100);
 			document.getElementById(6).innerText = "PLAYED: " + localStorage.totalgdplayed;
 			document.getElementById(7).innerText = "WIN %: " + winpct;
-			document.getElementById(8).innerText = "STREAK: " + localStorage.totalgdstreak;
+			document.getElementById(8).innerText = "STREAK: " + localStorage.totalgdstreak + tiericon;
 			document.getElementById(9).innerText = "STARS: " + localStorage.totalgdstars;			
 			displayFooter();
 			localStorage.gamegdwon = 0;
@@ -890,7 +913,7 @@ function processInput(e) {
 			var winpct = Math.round(localStorage.totalgdwins / localStorage.totalgdplayed * 100);
 			document.getElementById(6).innerText = "PLAYED: " + localStorage.totalgdplayed;
 			document.getElementById(7).innerText = "WIN %: " + winpct;
-			document.getElementById(8).innerText = "STREAK: " + localStorage.totalgdstreak;
+			document.getElementById(8).innerText = "STREAK: " + localStorage.totalgdstreak + tiericon;
 			document.getElementById(9).innerText = "STARS: " + localStorage.totalgdstars;			
 			displayFooter();
 			localStorage.gamegdwon = 1;
