@@ -165,9 +165,10 @@ function WAFunction() {
 
 function myFunctionOpenWA() {
 	/* window.open("https://wa.me/?text=urlencodedtext", "_blank"); */
-	var linktext = "Paste Stats and Share!";
-	var walink = "https://wa.me/?text=" + linktext;
-	window.open(walink);
+	//var linktext = "Paste Stats and Share!";
+	//var walink = "https://wa.me/?text=" + linktext;
+	//window.open(walink);
+        window.open("https://wa.me/", "_blank");
 }
 
 //Clipboard Code
