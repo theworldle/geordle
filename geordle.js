@@ -165,7 +165,7 @@ function WAFunction() {
 
 function myFunctionOpenWA() {
 	/* window.open("https://wa.me/?text=urlencodedtext", "_blank"); */
-	window.open('whatsapp://send?text=This is WhatsApp sharing example using button', "_blank");
+	window.open('whatsapp://send?', "_blank");
 }
 
 //Clipboard Code
