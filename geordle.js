@@ -190,7 +190,6 @@ function WAFunction() {
 	}
 
 	/* window.open("https://wa.me/?text=urlencodedtext", "_blank"); */
-	var copyText = "Hello";
 	var walink = "https://wa.me/?text=" + copyText;
 	window.open(walink, "_blank");
 }
