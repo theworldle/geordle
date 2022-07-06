@@ -105,8 +105,8 @@ a { text-decoration: none; }
 .button-row {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  margin-left: 25px;
+  justify-content: center;
+  
 }
 
 .buttoncoffee {
@@ -124,6 +124,8 @@ a { text-decoration: none; }
 #FBButton, #WAButton {
   all: unset;
   cursor: pointer;
+  margin-right:20px;
+  margin-left:20px;
 }
 
 #footer {
