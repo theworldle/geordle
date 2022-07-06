@@ -165,7 +165,7 @@ function WAFunction() {
 
 function myFunctionOpenWA() {
 	/* window.open("https://wa.me/?text=urlencodedtext", "_blank"); */
-	var linktext = " ";
+	var linktext = "Paste Stats and Share!";
 	var walink = "https://wa.me/?text=" + linktext;
 	window.open(walink);
 }
