@@ -98,13 +98,15 @@ a { text-decoration: none; }
     border-style: solid;
     background-color: #fff;
     border-color: #fff;
-	width:145px;
+	width:130px;
+	height:30px;
 }
 
 .button-row {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
+  margin-left: 10px;
 }
 
 .buttoncoffee {
@@ -119,6 +121,11 @@ a { text-decoration: none; }
 	margin-top:10px;
 }
 
+#FBButton, #WAButton {
+  all: unset;
+  cursor: pointer;
+}
+
 #footer {
   display: flex;
   flex-wrap: wrap;
@@ -128,19 +135,19 @@ a { text-decoration: none; }
 #pzlhdr, #pzl {
   font-weight: bold;
   font-size: 11px;
-  margin-right: 0px;
+  margin-left: 40px;
 } 
 
 #bbhdr {
   font-weight: bold;
   font-size: 11px;
-  margin-left: 20px;
+  margin-left: 25px;
 } 
 
 #bb{
   font-weight: bold;
   font-size: 14px;
-  margin-left: 20px;
+  margin-left: 25px;
   color: #6AAA64;
 } 
 

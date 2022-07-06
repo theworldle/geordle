@@ -69,7 +69,7 @@ function FinalClue() {
 //Button Text
 function ResetButton() {
 	let HTMLButton = document.getElementById("HTMLButton");
-	HTMLButton.innerText = "Share Stats🔊"
+	HTMLButton.innerText = "COPY STATS🔊"
 }
 
 
@@ -81,6 +81,8 @@ function displayFooter() {
 	document.getElementById("bb").style.display = "block";
 	document.getElementById("HTMLButton").style.display = "block";
 	document.getElementById("CoffeButton").style.display = "block";	
+	document.getElementById("FBButton").style.display = "block";	
+	document.getElementById("WAButton").style.display = "block";	
 	if (funFact[index] != countryList[index]){
 		if (flagList[index] != countryList[index]){
 			//document.getElementById("ffhdr").innerHTML = flagList[index] + " TRIVIA " + flagList[index];
@@ -147,6 +149,25 @@ if (localStorage.getItem('gameovergd' + days) != 0 && localStorage.getItem('game
 		tiericon = "🥇";
 	}	
 
+function FBFunction() {
+	myFunction();
+	setTimeout(myFunctionOpenFB, 100);
+}
+
+function myFunctionOpenFB() {
+	window.open("https://www.facebook.com/groups/329553752723826/?ref=share", "_blank");
+}
+
+function WAFunction() {
+	myFunction();
+	setTimeout(myFunctionOpenWA, 100);
+}
+
+function myFunctionOpenWA() {
+	window.open("https://wa.me/", "_blank");
+}
+
+
 //Clipboard Code
 function myFunction() {
 	if (localStorage.gdgamecnt == 6){
@@ -172,7 +193,6 @@ function myFunction() {
 					break;					
 			}
 		
-    
 	if (tierlevel == ""){
 		var copyText = "🌎 GEORDLE # " + days + " 🌎\n\n" + cluehdr + " - " + clueicon + "\n🔥 Streak: " + localStorage.totalgdstreak + " | ⭐ Stars: " + localStorage.totalgdstars + "\n\nhttps://tinyurl.com/geordle/";
 	}
@@ -186,7 +206,7 @@ function myFunction() {
 
 	//Button Text
 	let HTMLButton = document.getElementById("HTMLButton");
-	HTMLButton.innerText = "Copied☑️"
+	HTMLButton.innerText = "COPIED☑️"
 	setTimeout(ResetButton, 1000);
 }
 
@@ -544,6 +564,8 @@ function intialize() {
 	document.getElementById("bb").style.display = "none";
 	document.getElementById("HTMLButton").style.display = "none";
 	document.getElementById("CoffeButton").style.display = "none";
+	document.getElementById("FBButton").style.display = "none";
+	document.getElementById("WAButton").style.display = "none";
 	document.getElementById("ffhdr").style.display = "none";
 	document.getElementById("ffdtl").style.display = "none";
 	document.getElementById("lives").innerText = localStorage.gdlives;		
