@@ -159,39 +159,15 @@ function myFunctionOpenFB() {
 }
 
 function WAFunction() {
-	if (localStorage.gdgamecnt == 6){
-		var cluehdr = "X/5";
-	}
-	else {
-		cluehdr = localStorage.gdgamecnt + "/5";
-	}
-	switch (Number(localStorage.gdgamecnt)) {
-				case 0: var clueicon = "🔴 🔴 🔴 🔴 🔴"
-					break;
-				case 1: var clueicon = "🔴 🔴 🔴 🔴 ⭐"
-					break;	
-				case 2: var clueicon = "🔴 🔴 🔴 ⭐ ⭐"
-					break;				
-				case 3: var clueicon = "🔴 🔴 ⭐ ⭐ ⭐"
-					break;	
-				case 4: var clueicon = "🔴 ⭐ ⭐ ⭐ ⭐"
-					break;	
-				case 5: var clueicon = "⭐ ⭐ ⭐ ⭐ ⭐"
-					break;
-				case 6: var clueicon = "💀 💀 💀 💀 💀"
-					break;					
-			}
-		
-	if (tierlevel == ""){
-		var copyText = "🌎 GEORDLE # " + days + " 🌎\n\n" + cluehdr + " - " + clueicon + "\n🔥 Streak: " + localStorage.totalgdstreak + " | ⭐ Stars: " + localStorage.totalgdstars + "\n\nhttps://tinyurl.com/geordle/";
-	}
-	else {
-		var copyText = "🌎 GEORDLE # " + days + " 🌎\n\n" + cluehdr + " - " + clueicon + "\n🔥 Streak: " + localStorage.totalgdstreak + " | ⭐ Stars: " + localStorage.totalgdstars + "\n" + tiericon +  " Tier: " + tierlevel + "\n\nhttps://tinyurl.com/geordle/";
-	}
+	myFunction();
+	setTimeout(myFunctionOpenWA, 100);
+}
 
+function myFunctionOpenWA() {
 	/* window.open("https://wa.me/?text=urlencodedtext", "_blank"); */
-	var walink = "https://wa.me/?text=" + copyText;
-	window.open(walink, "_blank");
+	var linktext = " ";
+	var walink = "https://wa.me/?text=" + linktext;
+	window.open(walink);
 }
 
 //Clipboard Code
@@ -234,7 +210,6 @@ function myFunction() {
 	let HTMLButton = document.getElementById("HTMLButton");
 	HTMLButton.innerText = "COPIED☑️"
 	setTimeout(ResetButton, 1000);
-	
 }
 
 var countryList = ["belize", "lesotho", "nigeria", "grenada", "canada", "ghana", "russia", "tuvalu", "cyprus", "bahamas", "seychelles", "england", "guyana", "philippines", "bolivia", "unitedarabemirates", "tanzania", "ethiopia", "mongolia", "saudiarabia", "liechtenstein", "panama", "qatar", "hungary", "niger", "uruguay", "netherlands", "mozambique", "turkmenistan", "czechrepublic", "somalia", "albania", "egypt", "nauru", "romania", "southafrica", "mali", "costarica", "ivorycoast", "southkorea", "benin", "uganda", "marshallislands", "zimbabwe", "lithuania", "azerbaijan", "madagascar", "eswatini", "iraq", "sweden", "ireland", "togo", "jordan", "oman", "kyrgyzstan", "iceland", "switzerland", "democraticrepublicofthecongo", "kosovo", "burundi", "guatemala", "senegal", "moldova", "bahrain", "liberia", "yemen", "greece", "northkorea", "dominicanrepublic", "southafrica", "gabon", "guinea", "equatorialguinea", "monaco", "saintkittsandnevis", "libya", "sierraleone", "antiguaandbarbuda", "croatia", "saotomeandprincipe", "malawi", "nicaragua", "nepal", "vanuatu", "samoa", "peru", "vietnam", "ukraine", "indonesia", "eritrea", "cameroon", "jamaica", "chile", "paraguay", "haiti", "georgia", "montenegro", "bhutan", "burkinafaso", "thailand", "cuba", "morocco", "kenya", "luxembourg", "bangladesh", "singapore", "northmacedonia", "mauritania", "serbia", "uzbekistan", "timorleste", "papuanewguinea", "brunei", "china", "spain", "ecuador", "portugal", "armenia", "algeria", "tonga", "slovenia", "newzealand", "bulgaria", "argentina", "scotland", "israel", "saintlucia", "namibia", "afghanistan", "kuwait", "sanmarino", "pakistan", "colombia", "australia", "cambodia", "micronesia", "chad", "fiji", "zambia", "bosniaandherzegovina", "belarus", "turkey", "finland", "wales", "unitedstatesofamerica", "vaticancity", "solomonislands", "malaysia", "andorra", "mexico", "tunisia", "iran", "botswana", "latvia", "norway", "japan", "mauritius", "syria", "dominica", "srilanka", "slovakia", "estonia", "suriname", "kiribati", "trinidadandtobago", "guineabissau", "centralafricanrepublic", "brazil", "laos", "denmark", "india", "malta", "comoros", "belgium", "gambia", "angola", "elsalvador", "djibouti", "italy", "austria", "eswatini", "barbados", "caboverde", "poland", "france", "taiwan", "honduras", "kazakhstan", "southsudan", "venezuela", "maldives", "tajikistan", "southafrica", "sudan", "lebanon", "saintvincentandthegrenadines", "germany", "myanmar", "rwanda", "palau", "bolivia", "republicofthecongo", "equatorialguinea", "palestine", "unitedkingdom", "northernireland",];
