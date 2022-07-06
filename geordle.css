@@ -124,15 +124,15 @@ a { text-decoration: none; }
 #FBButton {
   all: unset;
   cursor: pointer;
-  margin-right:5px;
-  margin-left:10px;
+  margin-right:2px;
+  margin-left:4px;
 }
 
 #WAButton {
   all: unset;
   cursor: pointer;
-  margin-right:10px;
-  margin-left:5px;
+  margin-right:4px;
+  margin-left:2px;
 }
 
 
