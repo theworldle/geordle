@@ -164,10 +164,8 @@ function WAFunction() {
 }
 
 function myFunctionOpenWA() {
-	/* window.open("https://wa.me/", "_blank"); */
-	window.open("https://api.whatsapp.com/", "_blank");
+	window.open("https://wa.me/?text=urlencodedtext", "_blank");
 }
-
 
 //Clipboard Code
 function myFunction() {
