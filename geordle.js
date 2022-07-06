@@ -82,7 +82,7 @@ function displayFooter() {
 	document.getElementById("HTMLButton").style.display = "block";
 	document.getElementById("CoffeButton").style.display = "block";	
 	document.getElementById("FBButton").style.display = "block";	
-	/* document.getElementById("WAButton").style.display = "block";	 */
+	document.getElementById("WAButton").style.display = "block";	
 	if (funFact[index] != countryList[index]){
 		if (flagList[index] != countryList[index]){
 			//document.getElementById("ffhdr").innerHTML = flagList[index] + " TRIVIA " + flagList[index];
@@ -158,14 +158,15 @@ function myFunctionOpenFB() {
 	window.open("https://www.facebook.com/groups/329553752723826/?ref=share", "_blank");
 }
 
-/* function WAFunction() {
+function WAFunction() {
 	myFunction();
 	setTimeout(myFunctionOpenWA, 100);
 }
 
 function myFunctionOpenWA() {
-	window.open("https://wa.me/?text=urlencodedtext", "_blank");
-} */
+	/* window.open("https://wa.me/?text=urlencodedtext", "_blank"); */
+	window.open('whatsapp://send?text=This is WhatsApp sharing example using button', "_blank");
+}
 
 //Clipboard Code
 function myFunction() {
@@ -564,7 +565,7 @@ function intialize() {
 	document.getElementById("HTMLButton").style.display = "none";
 	document.getElementById("CoffeButton").style.display = "none";
 	document.getElementById("FBButton").style.display = "none";
-	/* document.getElementById("WAButton").style.display = "none"; */
+	document.getElementById("WAButton").style.display = "none";
 	document.getElementById("ffhdr").style.display = "none";
 	document.getElementById("ffdtl").style.display = "none";
 	document.getElementById("lives").innerText = localStorage.gdlives;		

@@ -121,12 +121,20 @@ a { text-decoration: none; }
 	margin-top:10px;
 }
 
-#FBButton, #WAButton {
+#FBButton {
   all: unset;
   cursor: pointer;
-  margin-right:20px;
-  margin-left:20px;
+  margin-right:5px;
+  margin-left:10px;
 }
+
+#WAButton {
+  all: unset;
+  cursor: pointer;
+  margin-right:10px;
+  margin-left:5px;
+}
+
 
 #footer {
   display: flex;
