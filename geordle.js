@@ -165,7 +165,7 @@ function WAFunction() {
 
 function myFunctionOpenWA() {
 	/* window.open("https://wa.me/?text=urlencodedtext", "_blank"); */
-	window.open('whatsapp://send?');
+	window.open('whatsapp://');
 }
 
 //Clipboard Code
