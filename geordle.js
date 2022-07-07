@@ -82,7 +82,7 @@ function displayFooter() {
 	document.getElementById("HTMLButton").style.display = "block";
 	document.getElementById("CoffeButton").style.display = "block";	
 	document.getElementById("FBButton").style.display = "block";	
-	document.getElementById("WAButton").style.display = "block";	
+	document.getElementById("/* WAButton */").style.display = "block";	
 	if (funFact[index] != countryList[index]){
 		if (flagList[index] != countryList[index]){
 			//document.getElementById("ffhdr").innerHTML = flagList[index] + " TRIVIA " + flagList[index];
@@ -165,10 +165,10 @@ function WAFunction() {
 
 function myFunctionOpenWA() {
 	/* window.open("https://wa.me/?text=urlencodedtext", "_blank"); */
-	//var linktext = "Paste Stats and Share!";
-	//var walink = "https://wa.me/?text=" + linktext;
-	//window.open(walink);
-        window.open("https://wa.me/", "_blank");
+	/* var linktext = "Paste Stats and Share!"; */
+	/* var walink = "https://wa.me/?text=" + linktext; */
+	/* window.open(walink); */
+	window.open("https://wa.me/", "_blank");
 }
 
 //Clipboard Code
@@ -568,7 +568,7 @@ function intialize() {
 	document.getElementById("HTMLButton").style.display = "none";
 	document.getElementById("CoffeButton").style.display = "none";
 	document.getElementById("FBButton").style.display = "none";
-	document.getElementById("WAButton").style.display = "none";
+	/* document.getElementById("WAButton").style.display = "none"; */
 	document.getElementById("ffhdr").style.display = "none";
 	document.getElementById("ffdtl").style.display = "none";
 	document.getElementById("lives").innerText = localStorage.gdlives;		
