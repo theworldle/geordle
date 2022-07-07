@@ -82,7 +82,7 @@ function displayFooter() {
 	document.getElementById("HTMLButton").style.display = "block";
 	document.getElementById("CoffeButton").style.display = "block";	
 	document.getElementById("FBButton").style.display = "block";	
-	document.getElementById("/* WAButton */").style.display = "block";	
+	/* document.getElementById("WAButton").style.display = "block";	 */
 	if (funFact[index] != countryList[index]){
 		if (flagList[index] != countryList[index]){
 			//document.getElementById("ffhdr").innerHTML = flagList[index] + " TRIVIA " + flagList[index];

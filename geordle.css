@@ -124,8 +124,8 @@ a { text-decoration: none; }
 #FBButton {
   all: unset;
   cursor: pointer;
-  margin-right:30px;
-  margin-left:30px;
+  margin-right:20px;
+  margin-left:20px;
 }
 
 #WAButton {
