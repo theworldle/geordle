@@ -664,6 +664,20 @@ function intialize() {
 	//Current Day Game Over
 	if (localStorage.getItem('gameovergd' + days) == "1") {
 		if (localStorage.gamegdwon == 1) {
+			switch (Number(localStorage.gdstarscnt)) {
+				case 0: color0 = "green";
+					break;
+				case 1: color1 = "green";
+					break;
+				case 2: color2 = "green";
+					break;
+				case 3: color3 = "green";
+					break;
+				case 4: color4 = "green";
+					break;
+				case 5: color5 = "green";
+					break;
+			}			
 			for (let i = 0; i < countrywidth; i++) {
 				let currTile = document.getElementById("1" + '-' + i);
 				currTile.innerText = country[i];
@@ -702,6 +716,7 @@ function intialize() {
 				}
 		}
 		else {
+			colorx = "green";
 			for (let i = 0; i < countrywidth; i++) {
 				let currTile = document.getElementById("1" + '-' + i);
 				currTile.innerText = country[i];
