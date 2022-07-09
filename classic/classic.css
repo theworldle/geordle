@@ -426,6 +426,7 @@ a { text-decoration: none; }
 /*   .keyboard-row {
     width: 400px;
   } */
+  
   .key-tile {
     width: 36px;
   } 
@@ -438,6 +439,11 @@ a { text-decoration: none; }
 /*   .keyboard-row {
     width: 350px;
   } */
+  
+  #stats {
+    width: 350px;
+  } 
+ 
   .key-tile {
     width: 31px;
     height: 50px;
@@ -453,6 +459,10 @@ a { text-decoration: none; }
 /*   .keyboard-row {
     width: 310px;
   } */
+ #stats {
+    width: 310px;
+  }
+  
   .key-tile {
     width: 26px;
     height: 50px;
