@@ -502,7 +502,7 @@ a { text-decoration: none; }
 
 @media screen and (max-width: 399px) and (min-width: 350px) {
   .keyboard-row,
-  #stats {
+  #icons {
     width: 350px;
   }
   .key-tile {
@@ -518,7 +518,7 @@ a { text-decoration: none; }
 
 @media screen and (max-width: 349px) and (min-width: 310px) {
   .keyboard-row,
-  #stats {
+  #icons {
     width: 310px;
   }
   .key-tile {
