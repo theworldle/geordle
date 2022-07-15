@@ -134,8 +134,9 @@ if (localStorage.getItem('gameovergd' + days) != 0 && localStorage.getItem('game
 	localStorage.removeItem('gameovergd' + d);
 } */
 
-	var tierlevel = ""		
-	var tiericon = ""	
+var tierlevel = ""		
+var tiericon = ""	
+function SetTier() {
 	if (localStorage.totalgdstreak >= 10 && localStorage.totalgdstreak <= 24)  {
 		tierlevel = "Bronze (Streak 10 - 24)";
 		tiericon = "🥉"; 
@@ -148,6 +149,7 @@ if (localStorage.getItem('gameovergd' + days) != 0 && localStorage.getItem('game
 		tierlevel = "Gold (Streak 50+)";
 		tiericon = "🥇";
 	}	
+}
 
 function FBFunction() {
 	myFunction();
@@ -654,7 +656,7 @@ function intialize() {
 				}
 			}
 		})
-
+    SetTier();
 	var winpct = Math.round(localStorage.totalgdwins / localStorage.totalgdplayed * 100);
 	document.getElementById(6).innerText = "PLAYED: " + localStorage.totalgdplayed;
 	document.getElementById(7).innerText = "WIN %: " + winpct;
@@ -869,7 +871,8 @@ function processInput(e) {
 			document.getElementById("answer").innerText = "GAME OVER! OUT OF LIVES.";
 			localStorage.setItem(('gameovergd' + days), 1);	
 			localStorage.totalgdplayed = Number(localStorage.totalgdplayed) + 1;	
-			localStorage.totalgdstreak = 0;			
+			localStorage.totalgdstreak = 0;		
+			SetTier();			
 			var winpct = Math.round(localStorage.totalgdwins / localStorage.totalgdplayed * 100);
 			document.getElementById(6).innerText = "PLAYED: " + localStorage.totalgdplayed;
 			document.getElementById(7).innerText = "WIN %: " + winpct;
@@ -950,6 +953,7 @@ function processInput(e) {
 			localStorage.totalgdwins = Number(localStorage.totalgdwins) + 1;
 			localStorage.totalgdstreak = Number(localStorage.totalgdstreak) + 1;
 			localStorage.totalgdstars = Number(localStorage.totalgdstars) + Number(localStorage.gdstarscnt);
+			SetTier();
 			var winpct = Math.round(localStorage.totalgdwins / localStorage.totalgdplayed * 100);
 			document.getElementById(6).innerText = "PLAYED: " + localStorage.totalgdplayed;
 			document.getElementById(7).innerText = "WIN %: " + winpct;
