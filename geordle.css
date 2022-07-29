@@ -102,10 +102,16 @@ a { text-decoration: none; }
 	height:30px;
 }
 
-.button-row {
+/* .button-row {
   display: flex;
   flex-wrap: wrap;
   justify-content: center; 
+} */
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .buttoncoffee {
@@ -123,47 +129,40 @@ a { text-decoration: none; }
 #FBButton {
   all: unset;
   cursor: pointer;
-  margin-right:3px;
-  margin-left:6px;
+  margin-left:10px;
+  margin-right:5px;
 }
 
 #TwitterButton {
   all: unset;
   cursor: pointer;
-  margin-right:6px;
-  margin-left:3px;
+  margin-right:10px;
+  margin-left:5px;
 }
 
-#WAButton {
-  all: unset;
-  cursor: pointer;
-  margin-right:6px;
-  margin-left:3px;
-}
 
 
 #footer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
+  margin-right:40px;
+  margin-left:50px;  
 }
 
 #pzlhdr, #pzl {
   font-weight: bold;
   font-size: 11px;
-  margin-left: 60px;
 } 
 
 #bbhdr {
   font-weight: bold;
   font-size: 11px;
-  margin-left: 15px;
 } 
 
 #bb{
   font-weight: bold;
-  font-size: 14px;
-  margin-left: 15px;
+  font-size: 14px; 
   color: #6AAA64;
 } 
 
