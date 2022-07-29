@@ -82,6 +82,7 @@ function displayFooter() {
 	document.getElementById("HTMLButton").style.display = "block";
 	document.getElementById("CoffeButton").style.display = "block";	
 	document.getElementById("FBButton").style.display = "block";	
+	document.getElementById("TwitterButton").style.display = "block";	
 	/* document.getElementById("WAButton").style.display = "block";	 */
 	if (funFact[index] != countryList[index]){
 		if (flagList[index] != countryList[index]){
@@ -158,6 +159,15 @@ function FBFunction() {
 
 function myFunctionOpenFB() {
 	window.open("https://www.facebook.com/groups/329553752723826/?ref=share", "_blank");
+}
+
+function TwitterFunction() {
+	myFunction();
+	setTimeout(myTwitterOpenFB, 100);
+}
+
+function myTwitterOpenFB() {
+	window.open("https://twitter.com/GeordleGame", "_blank");
 }
 
 function WAFunction() {
@@ -570,6 +580,7 @@ function intialize() {
 	document.getElementById("HTMLButton").style.display = "none";
 	document.getElementById("CoffeButton").style.display = "none";
 	document.getElementById("FBButton").style.display = "none";
+	document.getElementById("TwitterButton").style.display = "none";
 	/* document.getElementById("WAButton").style.display = "none"; */
 	document.getElementById("ffhdr").style.display = "none";
 	document.getElementById("ffdtl").style.display = "none";

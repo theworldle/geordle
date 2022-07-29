@@ -105,8 +105,7 @@ a { text-decoration: none; }
 .button-row {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  
+  justify-content: center; 
 }
 
 .buttoncoffee {
@@ -124,8 +123,15 @@ a { text-decoration: none; }
 #FBButton {
   all: unset;
   cursor: pointer;
-  margin-right:20px;
-  margin-left:20px;
+  margin-right:3px;
+  margin-left:6px;
+}
+
+#TwitterButton {
+  all: unset;
+  cursor: pointer;
+  margin-right:6px;
+  margin-left:3px;
 }
 
 #WAButton {
@@ -145,19 +151,19 @@ a { text-decoration: none; }
 #pzlhdr, #pzl {
   font-weight: bold;
   font-size: 11px;
-  margin-left: 40px;
+  margin-left: 60px;
 } 
 
 #bbhdr {
   font-weight: bold;
   font-size: 11px;
-  margin-left: 20px;
+  margin-left: 15px;
 } 
 
 #bb{
   font-weight: bold;
   font-size: 14px;
-  margin-left: 20px;
+  margin-left: 15px;
   color: #6AAA64;
 } 
 
