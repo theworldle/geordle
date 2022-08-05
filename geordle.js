@@ -146,9 +146,13 @@ function SetTier() {
 		tierlevel = "Silver (Streak 25 - 49)";
 		tiericon = "🥈"; 
 	}
-	else if (localStorage.totalgdstreak >= 50) {
-		tierlevel = "Gold (Streak 50+)";
+	else if (localStorage.totalgdstreak >= 50 && localStorage.totalgdstreak <= 99) {
+		tierlevel = "Gold (Streak 50 - 99)";
 		tiericon = "🥇";
+	}
+	else if (localStorage.totalgdstreak >= 100) {
+		tierlevel = "Ultimate (Streak 100+)";
+		tiericon = "🏆";
 	}	
 }
 
@@ -315,39 +319,39 @@ var funFact = 	["BELIZE, officially the Republic Belize, is a country located on
 				"SAMOA, officially the Independent State of Samoa and until 1997 known as Western Samoa, is a Polynesian island country. The capital city is Apia. Just two of the islands – Savai’i and Upolu – account for more than 99% of the country’s land with around 95% of the population living on the two islands. As such, Samoa is only 164km and a 30-minute flight away from “yesterday”. Despite only a short distance separating Samoa from its closest neighbour, American Samoa, the countries are on either side of the International Dateline. This also means Samoa celebrates the new year a whole day earlier than American Samoa. In 2009, Samoa became the first country in decades to officially switch from right- to left-side driving. The word tattoo is believed to originate from Samoa. Dating back centuries, the Samoan “tatau” is regarded as a right of passage for many Samoans. ",
 				"PERU, officially the Republic of Peru, is a country in western South America. Peru has a population of 34 million, and its capital and largest city is Lima. If you think that soccer riots are only common in the UK then think twice. A soccer match between Peru and Argentina in 1964 is recorded as being the worst in soccer history. 500 people were injured, and more than 300 lost their lives. Peruvians celebrate New Year’s by gifting one another yellow underpants. The tradition is based on the belief that if you wear a new pair of underwear during the first moments of the new year, you will have luck and prosperity for an entire year. Peru is the only country in the world, whose English name can be typed on a single row of a standard computer keyboard.",
 				"VIETNAM, officially the Socialist Republic of Vietnam, is the easternmost country on the Indochina Peninsula. It has an area of 331,210 square km. Hanoi is the country’s capital and Ho Chi Minh City is its largest city. The Vietnam War killed 2-4 million people including at least 2 million Vietnamese civilians, over 1 million Vietnamese soldiers and 58,300 American soldiers. Surprisingly, there is no legal drinking age in Vietnam. You can drink it as long as you can get the alcohol. While the population of Vietnam is about 92 million people, it is estimated that there were about 45 million registered motorbikes in 2016. This means there is a motorbike for every other person. WiFi networks are reliable and can be easily found pretty much everywhere in major cities. You can get free access to the Internet in most coffee shops, hotels, fast food franchises, even in the main walking streets.",
-				"ukraine",
-				"indonesia",
-				"eritrea",
-				"cameroon",
-				"jamaica",
-				"chile",
-				"paraguay",
-				"haiti",
-				"georgia",
-				"montenegro",
-				"bhutan",
-				"burkinafaso",
-				"thailand",
-				"cuba",
-				"morocco",
-				"kenya",
-				"luxembourg",
-				"bangladesh",
-				"singapore",
-				"northmacedonia",
-				"mauritania",
-				"serbia",
-				"uzbekistan",
-				"timorleste",
-				"papuanewguinea",
-				"brunei",
-				"china",
-				"spain",
-				"ecuador",
-				"portugal",
-				"armenia",
-				"algeria",
-				"tonga",
+				"Did you know that in 1986, UKRAINE witnessed the world’s worst nuclear power plant disaster? The tragedy occurred at the Chernobyl plant located in the northern part of the country. The area has since been declared an exclusion zone. The disaster and declaration led to the emergence of several ghost towns. The area attracts multitudes of tourists despite the high levels of radiation. The UN created the Chernobyl Trust Fund to help the victims.",
+				"Have you ever heard of Komodo dragons? This amazing animal, which can be seen in INDONESIA, can eat humans? Do not worry; they are protected, as they can be seen only in the country’s national parks of Komodo Island. The dragon is named after the island. Take note that it is the world’s largest lizard.",
+				"Did you know that there is a tank graveyard in ERITREA where the ruins of military vehicles from around the country have been dragged to an open field? Local families have made their homes in shipping containers in the centre of the area.",
+				"The world’s largest frog can be found in Cameroon.The goliath frog (Conraua goliath) can grow up to 34cm long, weigh over 3.2kg and builds their own ponds using heavy rocks.",
+				"The national flag of JAMAICA is one of two in the world that have no colors in common with the U.S. flag. Wondering which one is the other? It is Mauritania’s flag.",
+				"The world’s largest swimming pool is in CHILE. It is 1000 yards long, 20 acres in area and 115 feet deep. This giant pool holds 66 million gallons of seawater. Remember: this was not a cheap pool to build. It took five years and one billion U.S. dollars; its annual maintenance cost is close to two million U.S. dollars.",
+				"PARAGUAY is the only country worldwide whose national flag has different emblems on each side. The country’s Coat of Arms is on the front and its Treasury Seal is on the back with its motto, ‘Paz y Justica’ (Peace and Justice). Paraguay’s flag is one of the world’s oldest national flags.",
+				"The majority in HAITI love to gamble. They are even known to beg gods to reveal the winning lottery numbers during voodoo ceremonies. Cockfighting is also very popular in Haiti. The winner of the fight takes home $67, which is almost a month’s salary for someone. Raw meat and hot pepper soaked in rum is fed to the cocks to make them tough and aggressive.",
+				"GEORGIA is considered the origin of winemaking, having produced wine for over 8,000 years. Georgians discovered that if grape juice was placed into enormous clay pots, known as qvevri, and buried underground during the winter, it would change into wine. The ancient Georgian winemaking process of qvevri has been added to Unesco’s list of Intangible Cultural Heritage of Humanity.",
+				"MONTENEGRO has its top level domain as .me. After securing it in 2007, the government opened it up to world, marketing it as a generic top-level domain used to denote “Me”. It went live in 2008 and became the fastest-selling debut top level domain ever.",
+				"Everyone in BHUTAN has a home. There is no such thing as a homeless person, so it is unlikely that you will find anyone living on the streets. Anyone who does not have a roof over their head can ask for an audience with the king. He will then provide the person with land they can use to build a house.",
+				"Thomas Sankara, who ruled BURKINA FASO for four years from 1983, is known as the “African Che Guevara” due to his radical left-wing policies. Sankara, an accomplished guitarist, even wrote Burkina Faso’s national anthem himself.",
+				"In THAILAND, It is illegal to step on its currency or even tear it. It may seem like an odd way to respect money, but the real reason is that its currency carries the image of Thailand’s king. It is actually illegal to disrespect the monarch.",
+				"It is almost impossible to eat beef in CUBA. Beef is sold at high prices and is generally available in limited number of restaurants.",
+				"Nawal EL Moutawakel, from MOROCCO won the 400-meter hurdles, at the 1984 Los Angeles Olympics, and became the first woman from any Arab or Islamic country to win an Olympic Gold Medal. She is a council woman today.",
+				"Interestingly, KENYA could possibly be the birthplace of humans. This assumption is supported by the fact that the bones of one of the earliest human ancestors ever found were discovered in Kenya.",
+				"Almost half of the workforce in LUXEMBOURG lives in another country and commutes to work. They come from France, Belgium and, Germany. Luxembourg residents benefit from the fact that its government spends a third of its revenue on universal health care and social services for their people.",
+				"The rich vegetarian diet of BANGLADESH also means that this is one of the least obese countries globally. It’s the 2nd country in the world after Vietnam with the least level of adult obesity.",
+				"Elevators in SINGAPORE have Urine Detection Device, and if it detects the smell of kidney filtered water, it locks the doors until the police arrive. Singapore has passed a very specific law which prohibits urinating in the elevators.",
+				"In 2018, a baby was born in Liverpool, UK, that shared the same birthday as his NORTH MACEDONIAN father and grandfather. The chances of a baby sharing the same birth date as two preceding generations are one in 130,000.",
+				"MAURITANIA has one of the longest trains in the world. The “Iron-ore Train” or “Train du Desert” is frequently 2.3km long when it travels from the iron ore mines at Zouérat to Nouâdhibou.",
+				"Did you know that SERBIA is the place of the highest number of Roman emperors born in one country? Yes, 18 Roman rulers were born in this country and it accounts for a fifth of all Roman emperors.",
+				"Palov or Plov is the national dish of UZBEKISTAN. Made of mutton, rice, onions and grated carrots, legend holds it was invented by the cooks of Alexander the Great. Different areas of the country put their own spin on the dish, adding ingredients like pumpkins, peppers or dried tomatoes. A Uzbek master chef is held to be able to cook enough palov/plov in one caldron to serve a thousand men.",
+				"The country’s name used to be East Timor, before changing to TIMOR-LESTE. Timor is in fact, a word of both Portuguese and Indonesian origins and it means “east”. Therefore, the country used to be called “East-East”. There is no “West Timor”",
+				"In PAPUA NEW GUINEA’S Sepik region, young men cut their skin to resemble crocodiles in a scarification initiation rite. The men slice their backs, shoulders, and upper torsos with razor blades to leave long raised welts resembling a crocodile’s hide.",
+				"Hassanal Bolkiah, the Sultan of BRUNEI, is currently the world’s longest-reigning male monarch having ruled for 54 years as of 2022. Queen Elizabeth II is currently the longest-reigning monarch; she has reigned for over 70 years. According to the Guinness Book of World’s Record, the Istana Nurul Iman Palace in Brunei is the world’s largest residential palace; it is the official residence of the Sultan of Brunei. It boasts 1,788 rooms, covers 50 acres of land, and was constructed for $1.4 billion.",
+				"Do you know that all CHINESE share a birthday? Well, according to them, on the New Year, every Chinese turns one year older thus their birthday celebration. This is why the Chinese New Year is the most important holiday in China.",
+				"Interestingly, a Zipline connects SPAIN and Portugal. It only takes 60 seconds to cross the border on this Zipline. It is built on a river, 150 meters wide, between the two countries.",
+				"In Quito, the capital of ECUADOR, water boils at 90°C instead of 100°C. This is a direct effect of altitudes.",
+				"Christmas can be sunny and even warm in PORTUGAL, as it receives more than 300 days of sunshine annually!",
+				"ARMENIA is the first country in the world to make chess mandatory in schools. The sport of chess is integrated into the national curriculum, and many Armenians play chess in their daily lives. The men’s team won the European Team Championships in 1999 and the World Team Championship as well as the Chess Olympiad in several other years. Chess is an important feature in every day Aremenian life.",
+				"Hospitality is important among ALGERIANS. It is a blend of Arabic customs with French Gallic traditions. Everyone is cordial to strangers and friends alike. In a small gathering, it is polite to greet each person individually, beginning with the elders. Handshakes are common but using your fingers to point at objects or people is considered rude. Never use the left hand separately: when handing someone something, do it with the right hand or both hands.",
+				"TONGA is one of the first countries to celebrate the New Year and see the first light of every day.",
 				"slovenia",
 				"newzealand",
 				"bulgaria",
