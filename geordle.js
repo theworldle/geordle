@@ -153,7 +153,11 @@ function SetTier() {
 	else if (localStorage.totalgdstreak >= 100) {
 		tierlevel = "Ultimate (Streak 100+)";
 		tiericon = "🏆";
-	}	
+	}
+	else {
+		tierlevel = "";
+		tiericon = "";
+	}		
 }
 
 function FBFunction() {
