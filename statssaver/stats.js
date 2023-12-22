@@ -80,6 +80,6 @@ function submitMe() {
         document.getElementById("xstar").value = "";
 
         document.getElementById("answer").style.color = "#6AAA64";
-        document.getElementById("answer").innerText = "STATS SAVED SUCCESSFULLY!";
+        document.getElementById("answer").innerText = "STATS TRANSFERRED SUCCESSFULLY!";
 }
 
