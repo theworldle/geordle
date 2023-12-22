@@ -1,0 +1,96 @@
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>GEORDLE - Stats Saver</title>
+	<link href="stats.css" rel="stylesheet">
+	<script defer src="stats.js"></script> 
+	<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <!-- add icon link for all standard browsers -->
+	
+  <!-- FB Meta Tags -->
+  <meta property="og:url" content="https://sank0403.github.io/geordle/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="GEORDLE - Wordle for Countries and Capitals">
+  <meta property="og:description" content="Guess the Country and Capital Pairing.">
+  <!-- <meta property="og:image" content="https://sank0403.github.io/geordle/wallpaper.jpg"> -->
+  <!-- <meta property="og:image" content="https://sank0403.github.io/geordle/mapiconlarge.jpg"> -->
+  <meta property="og:image" content="https://sank0403.github.io/geordle/mapicon.jpg">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://sank0403.github.io/geordle/wallpaper.jpg" />
+  
+    <link rel = "icon" href = "https://sank0403.github.io/geordle/mapicon.jpg" 
+            type = "image/x-icon">  
+	<link rel="manifest" href="https://sank0403.github.io/geordle/geordle_manifest.json" />		<!--for shortcut icons and transitions-->	
+	<link href="https://sank0403.github.io/geordle/mapicon.jpg" rel="icon shortcut" sizes="3232" /> <!--follow same as indle - usually a smaller version-->
+	<link href="https://sank0403.github.io/geordle/mapicon.jpg" rel="apple-touch-icon" />	<!--This is the phone icon web title image-->		
+</head>
+<body>
+		
+	<center><img class="headerimage" src="maporig.jpg">
+	<div id="title">
+		<div class="waviy">
+			<span style="--i:1">G</span>
+			<span style="--i:2">E</span>
+			<span style="--i:3">O</span>
+			<span style="--i:4">R</span>
+			<span style="--i:5">D</span>
+			<span style="--i:6">L</span>
+			<span style="--i:7">E</span>
+		</div>
+	</div>
+	<div class="waviy1">
+		<span style="--i:1">s</span>
+		<span style="--i:2">t</span>
+		<span style="--i:3">a</span>
+		<span style="--i:4">t</span>
+		<span style="--i:5">s</span>
+		<span style="--i:6"> </span>
+		<span style="--i:7">s</span>
+		<span style="--i:8">a</span>
+		<span style="--i:9">v</span>
+		<span style="--i:10">e</span>
+		<span style="--i:11">r</span>
+
+	</div> 
+	<br>		
+ 		<!--<input type="button" id="" value="🌎 PRACTICE" onclick="window.open('https://sank0403.github.io/geordle/practice/','_self'); this.blur();" class="buttonrad">	
+		<input type="button" id="" value="🌎 CLASSIC" onclick="window.open('https://sank0403.github.io/geordle/classic/','_self'); this.blur();" class="buttonrad">	
+		<input type="button" value="❤️ GEORDLE️" onclick="window.open('https://www.buymeacoffee.com/sank0403/','_blank'); this.blur();" class="buttonrad">	 -->	
+    <hr>
+<div class="summary-item">
+PLAYED:<input type="text" id="ssplayed" class="defaultbutton" value="" onkeypress="return isNumber(event)" />
+<br/>
+<br/>
+WIN %:<input type="text" id="sswinp" class="defaultbutton" value=""  onkeypress="return isNumber(event)" />
+<br/>
+<br/>
+STREAK :<input type="text" id="ssstreak"  class="defaultbutton" value=""  onkeypress="return isNumber(event)" />
+<br/>
+<br/>
+STARS :<input type="text" id="ssstars"  class="defaultbutton" value=""  onkeypress="return isNumber(event)" />
+<br/>
+<br/>
+STAR DISTRIBUTION - 5⭐: <input type="text" id="5star" class="defaultbutton" value=""  onkeypress="return isNumber(event)" /><br/>
+STAR DISTRIBUTION - 4⭐: <input type="text" id="4star" class="defaultbutton" value=""  onkeypress="return isNumber(event)" /><br/>
+STAR DISTRIBUTION - 3⭐: <input type="text" id="3star" class="defaultbutton" value=""  onkeypress="return isNumber(event)" /><br/>
+STAR DISTRIBUTION - 2⭐: <input type="text" id="2star" class="defaultbutton" value=""  onkeypress="return isNumber(event)" /><br/>
+STAR DISTRIBUTION - 1⭐: <input type="text" id="1star" class="defaultbutton" value=""  onkeypress="return isNumber(event)" /><br/>
+STAR DISTRIBUTION - 0⭐: <input type="text" id="0star" class="defaultbutton" value=""  onkeypress="return isNumber(event)" /><br/>
+STAR DISTRIBUTION - X⭐: <input type="text" id="xstar" class="defaultbutton" value=""  onkeypress="return isNumber(event)" /><br/>
+<br/>
+<br/>
+</div>
+<hr>
+<button onclick="submitMe('ssplayed','sswinp','ssstreak','ssstars')" id="testButton" >Submit</button>
+	<br><br>
+
+	<br>	
+    <div id="answer"></div>
+	<br><br>
+    </body>
+</html>
