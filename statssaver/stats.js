@@ -1,3 +1,10 @@
+//Baseline Date
+var a = new Date(); // Current date now.
+var b = new Date(2022, 4, 15, 0, 0, 0, 0); // Start of TENIZ.
+var d = (a - b); // Difference in milliseconds.
+var days = parseInt((d / 1000) / 86400);
+console.log(localStorage.getItem('gameovergd' + days));
+
 window.localStorage;
 if (!localStorage.totalgdplayed){
 localStorage.setItem("totalgdplayed",0);
@@ -69,6 +76,21 @@ function submitMe() {
         	document.getElementById("answer").innerText = "ENTER VALUE FOR 'PLAYED'!";
         	return false;
         }
+        If (localStorage.getItem('gameovergd' + days) == 1){
+       		 if (Number(document.getElementById("ssplayed").value) > days) {
+       			document.getElementById("answer").style.color = "#FF0000";
+        		document.getElementById("answer").innerText = "GEORDLE HAS NOT BEEN LIVE FOR " + document.getElementById("ssplayed").value + " DAYS. NO CHEATING!";
+        		return false;
+		}
+	}
+	else {
+       		 if (Number(document.getElementById("ssplayed").value) > (days - 1)) {
+       			document.getElementById("answer").style.color = "#FF0000";
+        		document.getElementById("answer").innerText = "GEORDLE HAS NOT BEEN LIVE FOR " + document.getElementById("ssplayed").value + " DAYS. NO CHEATING!";
+        		return false;
+		}
+        }
+
         if (document.getElementById("sswinp").value == "") {
        		document.getElementById("answer").style.color = "#FF0000";
         	document.getElementById("answer").innerText = "ENTER VALUE FOR 'WIN %'!";
