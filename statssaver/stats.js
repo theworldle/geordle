@@ -76,7 +76,7 @@ function submitMe() {
         	document.getElementById("answer").innerText = "ENTER VALUE FOR 'PLAYED'!";
         	return false;
         }
-        If (localStorage.getItem('gameovergd' + days) == 1){
+        If ((localStorage.getItem('gameovergd' + days) == 1){
        		 if (Number(document.getElementById("ssplayed").value) > days) {
        			document.getElementById("answer").style.color = "#FF0000";
         		document.getElementById("answer").innerText = "GEORDLE HAS NOT BEEN LIVE FOR " + document.getElementById("ssplayed").value + " DAYS. NO CHEATING!";
