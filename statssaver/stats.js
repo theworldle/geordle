@@ -31,7 +31,7 @@ function saveStats() {
         		document.getElementById("xstar").value = "";
 
         		document.getElementById("answer").style.color = "#6AAA64";
-        		document.getElementById("answer").innerText = "STATS TRANSFERRED SUCCESSFULLY! REDIRECTING TO GEORDLE IN 5 SECONDS.";
+        		document.getElementById("answer").innerText = "STATS TRANSFERRED SUCCESSFULLY! EXITING PAGE IN 5 SECONDS.";
 			waitFiveSec();
 }
 
