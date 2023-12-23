@@ -3,22 +3,7 @@ var a = new Date(); // Current date now.
 var b = new Date(2022, 4, 15, 0, 0, 0, 0); // Start of TENIZ.
 var d = (a - b); // Difference in milliseconds.
 var days = parseInt((d / 1000) / 86400);
-console.log(localStorage.getItem('gameovergd' + days));
 
-window.localStorage;
-if (!localStorage.totalgdplayed){
-localStorage.setItem("totalgdplayed",0);
-localStorage.setItem("totalgdwins",0);
-localStorage.setItem("totalgdstreak",0);
-localStorage.setItem("totalgdstars",0);
-localStorage.setItem("stargd0count", 0);
-localStorage.setItem("stargd1count", 0);
-localStorage.setItem("stargd2count", 0);
-localStorage.setItem("stargd3count", 0);
-localStorage.setItem("stargd4count", 0);
-localStorage.setItem("stargd5count", 0);
-localStorage.setItem("stargdxcount", 0);
-}
 
 function saveStats() {
 			localStorage.totalgdplayed = document.getElementById("ssplayed").value;
@@ -76,7 +61,7 @@ function submitMe() {
         	document.getElementById("answer").innerText = "ENTER VALUE FOR 'PLAYED'!";
         	return false;
         }
-        If ((localStorage.getItem('gameovergd' + days) == 1){
+        if (localStorage.getItem('gameovergd' + days) == 1) {
        		 if (Number(document.getElementById("ssplayed").value) > days) {
        			document.getElementById("answer").style.color = "#FF0000";
         		document.getElementById("answer").innerText = "GEORDLE HAS NOT BEEN LIVE FOR " + document.getElementById("ssplayed").value + " DAYS. NO CHEATING!";
@@ -86,7 +71,7 @@ function submitMe() {
 	else {
        		 if (Number(document.getElementById("ssplayed").value) > (days - 1)) {
        			document.getElementById("answer").style.color = "#FF0000";
-        		document.getElementById("answer").innerText = "GEORDLE HAS NOT BEEN LIVE FOR " + document.getElementById("ssplayed").value + " DAYS. NO CHEATING!";
+        		document.getElementById("answer").innerText = "CAN ONLY TRANSFER FOR  " + (days - 1) + " DAYS COVERING STATS UNTIL YESTERDAY! PLAY TODAYS GAME ONCE TRANSFERRED.";
         		return false;
 		}
         }
