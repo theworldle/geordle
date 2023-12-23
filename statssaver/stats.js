@@ -40,7 +40,7 @@ function waitFiveSec(){
   }
 
 function opengeordle(){
-    window.open('https://sank0403.github.io/geordle/')
+    window.open("https://sank0403.github.io/geordle/","_self")
     //window.close();
   }
 
