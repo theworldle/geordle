@@ -31,8 +31,17 @@ function saveStats() {
         		document.getElementById("xstar").value = "";
 
         		document.getElementById("answer").style.color = "#6AAA64";
-        		document.getElementById("answer").innerText = "STATS TRANSFERRED SUCCESSFULLY!";
+        		document.getElementById("answer").innerText = "STATS TRANSFERRED SUCCESSFULLY! REDIRECTING TO GEORDLE IN 5 SECONDS.";
+			waitFiveSec();
 }
+
+function waitFiveSec(){
+    setTimeout(closewindow, 5000) /*(here you need to implement delay code)*/
+  }
+
+function closewindow(){
+    window.close();
+  }
 
 function isNumber(evt) {
     evt = (evt) ? evt : window.event;
@@ -55,7 +64,11 @@ function submitMe() {
         	return false;
 	}
 
-
+ 	if (document.getElementById("ssplayed").value.includes('.') || document.getElementById("sswinp").value.includes('.') || document.getElementById("ssstreak").value.includes('.') || document.getElementById("ssstars").value.includes('.') || document.getElementById("5star").value.includes('.') || document.getElementById("4star").value.includes('.') || document.getElementById("3star").value.includes('.') || document.getElementById("2star").value.includes('.') || document.getElementById("1star").value.includes('.') || document.getElementById("0star").value.includes('.') || document.getElementById("xstar").value.includes('.')) {
+       		document.getElementById("answer").style.color = "#FF0000";
+        	document.getElementById("answer").innerText = "NO DECIMAL VALUES ALLOWED'!";
+        	return false;
+        }
         if (document.getElementById("ssplayed").value == "") {
        		document.getElementById("answer").style.color = "#FF0000";
         	document.getElementById("answer").innerText = "ENTER VALUE FOR 'PLAYED'!";
