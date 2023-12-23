@@ -93,12 +93,12 @@ a { text-decoration: none; }
 .buttonrad1 {
   border-radius: 12px;
     font-weight: bold;
-    font-size: 13px;
+    font-size: 14px;
     color: black;
     border-style: solid;
     background-color: #fff;
     border-color: #fff;
-	width:115px;
+	width:120px;
 	height:30px;
 }
 
