@@ -40,8 +40,8 @@ function waitFiveSec(){
   }
 
 function opengeordle(){
-    window.open('https://sank0403.github.io/geordle/','newwin')
-    window.close();
+    window.open('https://sank0403.github.io/geordle/')
+    //window.close();
   }
 
 function isNumber(evt) {
