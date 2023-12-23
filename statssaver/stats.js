@@ -31,15 +31,16 @@ function saveStats() {
         		document.getElementById("xstar").value = "";
 
         		document.getElementById("answer").style.color = "#6AAA64";
-        		document.getElementById("answer").innerText = "STATS TRANSFERRED SUCCESSFULLY! EXITING PAGE IN 5 SECONDS.";
+        		document.getElementById("answer").innerText = "STATS TRANSFERRED SUCCESSFULLY! REDIRECTING TO GEORDLE IN A FEW SECONDS.";
 			waitFiveSec();
 }
 
 function waitFiveSec(){
-    setTimeout(closewindow, 5000) /*(here you need to implement delay code)*/
+    setTimeout(opengeordle, 5000) /*(here you need to implement delay code)*/
   }
 
-function closewindow(){
+function opengeordle(){
+    window.open('https://sank0403.github.io/geordle/','newwin')
     window.close();
   }
 
