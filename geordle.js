@@ -586,7 +586,7 @@ function intialize() {
 	document.getElementById("bbhdr").style.display = "none";
 	document.getElementById("bb").style.display = "none";
 	document.getElementById("HTMLButton").style.display = "none";
-	//document.getElementById("CoffeButton").style.display = "none";
+	document.getElementById("CoffeButton").style.display = "block";
 	document.getElementById("FBButton").style.display = "none";
 	document.getElementById("TwitterButton").style.display = "none";
 	/* document.getElementById("WAButton").style.display = "none"; */
