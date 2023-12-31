@@ -14,7 +14,6 @@ function saveStats() {
         		document.getElementById("ssstreak").value = "";
 			localStorage.totalgdstars = document.getElementById("ssstars").value;
         		document.getElementById("ssstars").value = "";
-
 			localStorage.stargd5count = document.getElementById("5star").value;
        			document.getElementById("5star").value = "";
 			localStorage.stargd4count = document.getElementById("4star").value;
@@ -29,7 +28,6 @@ function saveStats() {
         		document.getElementById("0star").value = "";
 			localStorage.stargdxcount = document.getElementById("xstar").value;
         		document.getElementById("xstar").value = "";
-
         		document.getElementById("answer").style.color = "#6AAA64";
         		document.getElementById("answer").innerText = "STATS TRANSFERRED SUCCESSFULLY!\n REDIRECTING TO GEORDLE NOW...";
 			waitFiveSec();
@@ -115,6 +113,13 @@ function submitMe() {
         	document.getElementById("answer").innerText = "ENTER VALUE FOR 'STARS'!";
         	return false;
         }
+
+        if (Number(document.getElementById("ssstars").value) > Number(document.getElementById("ssplayed").value)*5) {
+       		document.getElementById("answer").style.color = "#FF0000";
+        	document.getElementById("answer").innerText = "TOTAL STARS WON CANNOT BE MORE THAN 5 TIMES TOTAL PLAYED!";
+        	return false;
+        }
+
         if (document.getElementById("5star").value == "" || document.getElementById("4star").value == ""  || document.getElementById("3star").value == "" || document.getElementById("2star").value == "" || document.getElementById("1star").value == "" || document.getElementById("0star").value == ""  || document.getElementById("xstar").value == "") {
        		document.getElementById("answer").style.color = "#FF0000";
         	document.getElementById("answer").innerText = "ENTER ALL VALUES FOR 'STAR DISTRIBUTION'!";
