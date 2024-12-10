@@ -1,27 +1,19 @@
 <html lang="en">
 <head>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-MEBRVZNPE4"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-	  
-	  gtag('config', 'G-MEBRVZNPE4');
-	</script>
 	<meta charset="UTF-8">
+	<meta name="robots" content="noindex, nofollow">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Geordle Classic - Wordle for Countries and Capitals</title>
+	<title>Geordle Classic - Worldle for Countries and Capitals</title>
 	<link href="classic.css" rel="stylesheet">
 	<script defer src="classic.js"></script>
 	<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
     <!-- add icon link for all standard browsers -->
-    <link rel = "icon" href = "https://sank0403.github.io/geordle/mapicon.jpg" 
+    <link rel = "icon" href = "https://theworldle.github.io/geordle/mapicon.jpg" 
             type = "image/x-icon">  
-	<link rel="manifest" href="https://sank0403.github.io/geordle/geordle_manifest.json" />		<!--for shortcut icons and transitions-->	
-	<link href="https://sank0403.github.io/geordle/mapicon.jpg" rel="icon shortcut" sizes="3232" /> <!--follow same as indle - usually a smaller version-->
-	<link href="https://sank0403.github.io/geordle/mapicon.jpg" rel="apple-touch-icon" />	<!--This is the phone icon web title image-->		
+	<link rel="manifest" href="https://theworldle.github.io/geordle/geordle_manifest.json" />		<!--for shortcut icons and transitions-->	
+	<link href="https://theworldle.github.io/geordle/mapicon.jpg" rel="icon shortcut" sizes="3232" /> <!--follow same as indle - usually a smaller version-->
+	<link href="https://theworldle.github.io/geordle/mapicon.jpg" rel="apple-touch-icon" />	<!--This is the phone icon web title image-->		
 </head>
 <body>
 	<div id="icons">
@@ -30,7 +22,7 @@
 				<class data-modal-target="#modal" id="rulesbutton"><img src="rulesicon.png" style="width:30px;height:30px;">
 			</span>	
 			<span class="icons-item">
-				<a href="https://sank0403.github.io/geordle/"><img src="clock.jpg" style="width:30px;height:30px" alt ="Daily Mode"></a>
+				<a href="https://theworldle.github.io/geordle/"><img src="clock.jpg" style="width:30px;height:30px" alt ="Daily Mode"></a>
 			</span>			
 		</div>
 	</div>
@@ -67,7 +59,7 @@
 	<!-- <input type="button" id="hint" value="Hint💡" onclick="this.disabled=true; hint();" class="buttonrad">	  -->
 	<input type="button" id="hint" value="💡HINT" onclick="hint(); this.blur();" class="buttonrad">
 	<input type="button" id="giveup" value="👎GIVE UP" onclick="giveUp(); this.blur();" class="buttonrad"> 
-	<!-- <input type="button" id="" value="🌎 DAILY" onclick="window.open('https://sank0403.github.io/geordle/' , '_self'); this.blur();" class="buttonrad"> -->
+	<!-- <input type="button" id="" value="🌎 DAILY" onclick="window.open('https://theworldle.github.io/geordle/' , '_self'); this.blur();" class="buttonrad"> -->
 	</center>	
 	<div class="modal" id="modal">
 		<div class="modal-header">
@@ -84,7 +76,7 @@
 				<button data-close-button class="close-button">&times;</button>
 		</div>
 		<div class ="modal-body">
-		  GEORDLE is a spin-off on the popular <a href="https://www.nytimes.com/games/wordle/index.html"><b>WORDLE</b></a> game for Geography Lovers. This is the Practice Mode, in the classic Wordle format, where you can refresh your knowledge of COUNTRIES and CAPITALS. Switch to the Daily Mode for the actual Game, which is in a different format. 
+		  GEORDLE is a spin-off on the popular <a href="https://theworldle.com"><b>WORLDLE</b></a> game for Geography Lovers. This is the Practice Mode, in the classic GEORDLE format, where you can refresh your knowledge of COUNTRIES and CAPITALS. Switch to the Daily Mode for the actual Game, which is in a different format. 
 		  <br><br>
 		  Guess the COUNTRY/CAPITAL within the allowed number of tries. Hit the enter button to submit.
 <!--          <br><br>
@@ -135,7 +127,7 @@
 			None of these letters are in the Answer at all.		
 			<br><br>
 		  <center><b>Practice multiple times a day!<b></center>
-		  <div class="email"><a href="mailto: geowordle@gmail.com">📧</a></div>
+		  <div class="email"><a href="mailto: contact@theworldle.com">📧</a></div>
 		</div>		
 	</div>
 	<div id="overlay"></div>
@@ -147,7 +139,7 @@
 		<span id="time"></span>
 		</div>			
 	</div>	
-		<input type="button" value="❤️ Buy Me a Coffee ❤️" onclick="window.open('https://www.buymeacoffee.com/sank0403/','_blank')" class="buttoncoffee"><br>
+		<input type="button" value="❤️ Play Worldle ❤️" onclick="window.open('https://theworldle.com/','_blank')" class="buttoncoffee"><br>
     <div id="board"></div>
     <h1 id="answer"></h1>
 	   <br><br>
